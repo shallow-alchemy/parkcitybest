@@ -27,13 +27,13 @@ layout: base.njk
                 <label for="cuisine-filter">Cuisine Type</label>
                 <select id="cuisine-filter" class="filter-select">
                     <option value="">All Cuisines</option>
-                    <option value="American">American</option>
-                    <option value="Italian">Italian</option>
-                    <option value="Japanese">Japanese</option>
-                    <option value="Mexican">Mexican</option>
+                    <option value="Fine Dining & Steakhouses">Fine Dining & Steakhouses</option>
+                    <option value="Contemporary American">Contemporary American</option>
+                    <option value="Casual American & Sports Bars">Casual American & Sports Bars</option>
+                    <option value="Breakfast & Brunch Spots">Breakfast & Brunch Spots</option>
                     <option value="Seafood">Seafood</option>
-                    <option value="Mediterranean">Mediterranean</option>
-                    <option value="Chinese">Chinese</option>
+                    <option value="International Fusion">International Fusion</option>
+                    <option value="Quick Bites & Cafes">Quick Bites & Cafes</option>
                 </select>
             </div>
             
@@ -41,12 +41,12 @@ layout: base.njk
                 <label for="occasion-filter">Occasion</label>
                 <select id="occasion-filter" class="filter-select">
                     <option value="">All Occasions</option>
-                    <option value="date-night">Date Night</option>
-                    <option value="family">Family Friendly</option>
-                    <option value="apres-ski">Après-Ski</option>
-                    <option value="business">Business Dining</option>
-                    <option value="casual">Casual</option>
-                    <option value="special-occasion">Special Occasion</option>
+                    <option value="Special Occasions & Celebrations">Special Occasions & Celebrations</option>
+                    <option value="Family Dining">Family Dining</option>
+                    <option value="Breakfast & Brunch">Breakfast & Brunch</option>
+                    <option value="Casual Dining & Lunch">Casual Dining & Lunch</option>
+                    <option value="Ski & Mountain Experience">Ski & Mountain Experience</option>
+                    <option value="Drinks & Social">Drinks & Social</option>
                 </select>
             </div>
             
@@ -55,12 +55,14 @@ layout: base.njk
                 <select id="location-filter" class="filter-select">
                     <option value="">All Locations</option>
                     <option value="Main Street">Main Street</option>
-                    <option value="Old Town">Old Town</option>
                     <option value="Canyons Village">Canyons Village</option>
                     <option value="Deer Valley">Deer Valley</option>
                     <option value="Kimball Junction">Kimball Junction</option>
-                    <option value="Prospector">Prospector</option>
+                    <option value="Pinebrook">Pinebrook</option>
+                    <option value="Prospector Square">Prospector Square</option>
+                    <option value="Silver Creek">Silver Creek</option>
                     <option value="Silver Lake Village">Silver Lake Village</option>
+                    <option value="Silver Star Village">Silver Star Village</option>
                 </select>
             </div>
             
@@ -180,6 +182,10 @@ layout: base.njk
 </section>
 
 <script>
+// Category mapping for cuisine and occasion filtering
+const categoryMapping = {{ categoryMapping | dump | safe }};
+const occasionMapping = {{ occasionMapping | dump | safe }};
+
 // Restaurant filtering functionality
 function filterRestaurants() {
     const priceFilter = document.getElementById('price-filter').value;
@@ -197,8 +203,19 @@ function filterRestaurants() {
         const location = card.dataset.location;
         
         const priceMatch = !priceFilter || price === priceFilter;
-        const cuisineMatch = !cuisineFilter || cuisine === cuisineFilter;
-        const occasionMatch = !occasionFilter || occasions.includes(occasionFilter);
+        
+        // Check if cuisine matches category
+        let cuisineMatch = !cuisineFilter;
+        if (cuisineFilter && categoryMapping[cuisineFilter]) {
+            cuisineMatch = categoryMapping[cuisineFilter].includes(cuisine);
+        }
+        
+        // Check if any occasion matches the selected category
+        let occasionMatch = !occasionFilter;
+        if (occasionFilter && occasionMapping[occasionFilter]) {
+            occasionMatch = occasions.some(occasion => occasionMapping[occasionFilter].includes(occasion));
+        }
+        
         const locationMatch = !locationFilter || location === locationFilter;
         
         if (priceMatch && cuisineMatch && occasionMatch && locationMatch) {

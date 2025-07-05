@@ -4,7 +4,7 @@
       "name": "Riverhorse on Main",
       "cuisine": "New American (French/Italian influences)",
       "priceRange": "$$$$",
-      "location": "Historic Main Street",
+      "location": "Main Street",
       "contact": {
         "phone": "435-649-3536",
         "website": "https://riverhorseparkcity.com",
@@ -38,7 +38,7 @@
       "name": "Apex at Montage Deer Valley",
       "cuisine": "Modern American Steakhouse",
       "priceRange": "$$$$",
-      "location": "Montage Deer Valley Resort",
+      "location": "Deer Valley",
       "contact": {
         "phone": "435-604-1402",
         "website": "https://montage.com/deervalley/dining/apex",
@@ -74,7 +74,7 @@
       "name": "Courchevel Bistro",
       "cuisine": "French-European",
       "priceRange": "$$-$$$$",
-      "location": "Historic Main Street",
+      "location": "Main Street",
       "contact": {
         "phone": "435-572-4398",
         "website": "https://courchevelbistro.com",
@@ -109,7 +109,7 @@
       "name": "The Mariposa",
       "cuisine": "Contemporary American (Tasting Menus)",
       "priceRange": "$$$$",
-      "location": "Silver Lake Lodge (Mid-Mountain)",
+      "location": "Silver Lake Village",
       "contact": {
         "phone": "435-645-6632",
         "website": "https://deervalley.com",
@@ -145,7 +145,7 @@
       "name": "The Eating Establishment",
       "cuisine": "American (Breakfast All Day)",
       "priceRange": "$$",
-      "location": "Historic Main Street",
+      "location": "Main Street",
       "contact": {
         "phone": "435-649-8284",
         "website": "https://theeatingestablishment.net",
@@ -177,7 +177,7 @@
       "name": "Silver Star Café",
       "cuisine": "New American (Roots Cuisine)",
       "priceRange": "$$$",
-      "location": "Silver Star Village (Mid-Mountain)",
+      "location": "Silver Star Village",
       "contact": {
         "phone": "435-655-3456",
         "website": "https://thesilverstarcafe.com",
@@ -273,7 +273,7 @@
       "name": "High West Saloon",
       "cuisine": "American/Whiskey Bar",
       "priceRange": "$$$",
-      "location": "Historic Main Street",
+      "location": "Main Street",
       "contact": {
         "phone": "435-649-8300",
         "website": "https://highwest.com",
@@ -307,7 +307,7 @@
       "name": "The Bridge Cafe & Grill",
       "cuisine": "Brazilian-American Fusion",
       "priceRange": "$$",
-      "location": "Historic Main Street",
+      "location": "Main Street",
       "contact": {
         "phone": "435-658-5451",
         "website": "https://thebridgecafeandgrill.com",
@@ -375,7 +375,7 @@
       "name": "Collie's Sports Bar & Grill",
       "cuisine": "American Sports Bar",
       "priceRange": "$$",
-      "location": "Historic Main Street",
+      "location": "Main Street",
       "contact": {
         "phone": "435-649-0888",
         "website": "https://colliesbbq.com",
@@ -409,7 +409,7 @@
       "name": "Après Pendry",
       "cuisine": "European-American",
       "priceRange": "$$$",
-      "location": "Pendry Park City",
+      "location": "Canyons Village",
       "contact": {
         "phone": "N/A",
         "website": "https://pendry.com",
@@ -442,7 +442,7 @@
       "name": "RIME Oyster Bar",
       "cuisine": "Seafood/Raw Bar",
       "priceRange": "$$$",
-      "location": "Deer Valley Resort",
+      "location": "Deer Valley",
       "contact": {
         "phone": "N/A",
         "website": "https://deervalley.com",
@@ -475,7 +475,7 @@
       "name": "Five5eeds",
       "cuisine": "Australian Breakfast/Brunch",
       "priceRange": "$$",
-      "location": "Off Main Street",
+      "location": "Main Street",
       "contact": {
         "phone": "N/A",
         "website": "https://five5eeds.com",
@@ -509,7 +509,7 @@
       "name": "Harvest",
       "cuisine": "Australian-style Cafe",
       "priceRange": "$$",
-      "location": "Historic Main Street Area",
+      "location": "Main Street",
       "contact": {
         "phone": "N/A",
         "website": "https://harvestparkcity.com",
@@ -544,7 +544,7 @@
       "name": "The Eating Establishment",
       "cuisine": "American Diner",
       "priceRange": "$$",
-      "location": "Historic Main Street",
+      "location": "Main Street",
       "contact": {
         "phone": "435-649-8284",
         "website": "N/A",
@@ -579,7 +579,7 @@
       "name": "Silver Summit Cafe",
       "cuisine": "American Diner/Mexican",
       "priceRange": "$",
-      "location": "Off Highway 40",
+      "location": "Silver Creek",
       "contact": {
         "phone": "N/A",
         "website": "https://thesilversummitcafe.com",
@@ -612,7 +612,7 @@
       "name": "Atticus Coffee & Teahouse",
       "cuisine": "Coffee Shop/Light Breakfast",
       "priceRange": "$",
-      "location": "Historic Main Street",
+      "location": "Main Street",
       "contact": {
         "phone": "N/A",
         "website": "N/A",

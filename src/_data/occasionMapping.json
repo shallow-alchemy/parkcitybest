@@ -1,0 +1,50 @@
+{
+  "Special Occasions & Celebrations": [
+    "celebration",
+    "date-night",
+    "special-occasion",
+    "fine-dining-experience",
+    "business-dining",
+    "unique-experience",
+    "authentic-french",
+    "book-browsing",
+    "contemporary-dining"
+  ],
+  "Family Dining": [
+    "family-dining",
+    "family-gathering",
+    "family-breakfast",
+    "family-steakhouse",
+    "large-groups"
+  ],
+  "Breakfast & Brunch": [
+    "breakfast",
+    "brunch",
+    "family-breakfast",
+    "pre-ski-breakfast",
+    "quick-breakfast",
+    "light-breakfast",
+    "weekend-brunch",
+    "bagel-craving"
+  ],
+  "Casual Dining & Lunch": [
+    "casual-dining",
+    "casual-lunch",
+    "budget-dining",
+    "local-experience",
+    "healthy-dining"
+  ],
+  "Ski & Mountain Experience": [
+    "apres-ski",
+    "mountain-dining",
+    "pre-ski",
+    "pre-ski-breakfast"
+  ],
+  "Drinks & Social": [
+    "whiskey-tasting",
+    "coffee-break",
+    "evening-cocktails",
+    "sports-watching",
+    "late-night"
+  ]
+}

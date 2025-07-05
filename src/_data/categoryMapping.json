@@ -1,0 +1,37 @@
+{
+  "Fine Dining & Steakhouses": [
+    "Contemporary American (Tasting Menus)",
+    "Modern American Steakhouse",
+    "Western Steakhouse",
+    "New American (French/Italian influences)",
+    "French-European"
+  ],
+  "Contemporary American": [
+    "Contemporary American",
+    "New American (Roots Cuisine)",
+    "European-American"
+  ],
+  "Casual American & Sports Bars": [
+    "American Bar & Grill",
+    "American Sports Bar",
+    "American/Whiskey Bar",
+    "American Diner",
+    "American Diner/Mexican"
+  ],
+  "Breakfast & Brunch Spots": [
+    "American (Breakfast All Day)",
+    "Australian Breakfast/Brunch",
+    "Australian-style Cafe",
+    "Bagel Shop/Breakfast",
+    "Coffee Shop/Light Breakfast"
+  ],
+  "Seafood": [
+    "Seafood/Raw Bar"
+  ],
+  "International Fusion": [
+    "Brazilian-American Fusion"
+  ],
+  "Quick Bites & Cafes": [
+    "Coffee Shop/Light Breakfast"
+  ]
+}
