@@ -1,0 +1,17 @@
+{
+  "name": "park-city-guide",
+  "version": "1.0.0",
+  "description": "Park City Utah - Complete Guide to Activities, Dining, and Adventures",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "clean": "rm -rf _site"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0"
+  },
+  "dependencies": {
+    "html-minifier": "^4.0.0"
+  }
+}

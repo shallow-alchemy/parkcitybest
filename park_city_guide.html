@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Park City Utah - Ultimate Guide to Outdoor Adventures</title>
+    <meta name="description" content="Discover the best outdoor activities, hiking trails, skiing, mountain biking, and adventures in Park City, Utah. Your complete guide to year-round outdoor fun.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 3px solid #e74c3c;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo span {
+            color: #e74c3c;
+            font-size: 1.2rem;
+            display: block;
+            margin-top: -8px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background: #e74c3c;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23667eea" width="1200" height="600"/><polygon fill="%23764ba2" points="0,600 400,200 800,400 1200,100 1200,600"/><polygon fill="%23e74c3c" points="200,600 600,250 1000,450 1200,200 1200,600"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 8rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(231, 76, 60, 0.1), rgba(118, 75, 162, 0.1));
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.7; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h2 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .cta-button:hover {
+            background: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+        }
+
+        .content {
+            background: white;
+            padding: 4rem 0;
+        }
+
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .activity-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .activity-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #e74c3c, #667eea, #764ba2);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .activity-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .activity-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .activity-card h3 {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .activity-card p {
+            color: #5a6c7d;
+            margin-bottom: 1rem;
+        }
+
+        .difficulty {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .difficulty.easy {
+            background: #2ecc71;
+            color: white;
+        }
+
+        .difficulty.moderate {
+            background: #f39c12;
+            color: white;
+        }
+
+        .difficulty.challenging {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .season-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .season-tag {
+            background: #ecf0f1;
+            color: #2c3e50;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #e74c3c, #667eea);
+            border-radius: 2px;
+        }
+
+        .intro-text {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #5a6c7d;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+        }
+
+        .local-tips {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 3rem 0;
+            margin-top: 3rem;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .tip-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .tip-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: #e74c3c;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #bdc3c7;
+            text-decoration: none;
+            line-height: 1.8;
+        }
+
+        .footer-section a:hover {
+            color: #e74c3c;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .activities-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Park City Adventures</h1>
+                    <span>Your Ultimate Utah Outdoor Guide</span>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#winter">Winter</a></li>
+                        <li><a href="#summer">Summer</a></li>
+                        <li><a href="#year-round">Year-Round</a></li>
+                        <li><a href="#local-tips">Local Tips</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Discover Park City's Greatest Adventures</h2>
+                <p>From world-class skiing to epic mountain biking, experience the best outdoor activities in Utah's mountain paradise</p>
+                <a href="#activities" class="cta-button">Start Exploring</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="content" id="activities">
+        <div class="container">
+            <h2 class="section-title">Epic Outdoor Experiences</h2>
+            <p class="intro-text">Park City offers year-round adventures for every skill level. From the legendary powder skiing that made this town famous to world-class mountain biking trails, discover why Park City is Utah's outdoor adventure capital.</p>
+
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <h3>🎿 World-Class Skiing</h3>
+                    <div class="difficulty moderate">All Levels</div>
+                    <p>Experience the legendary powder at Park City Mountain Resort and Deer Valley. With over 7,300 acres of skiable terrain, Park City offers everything from gentle beginner slopes to challenging double-black diamonds.</p>
+                    <p><strong>Best Spots:</strong> Park City Mountain Resort, Deer Valley Resort</p>
+                    <p><strong>Insider Tip:</strong> Visit mid-week for shorter lift lines and better powder conditions</p>
+                    <div class="season-tags">
+                        <span class="season-tag">December - April</span>
+                        <span class="season-tag">Peak Season</span>
+                    </div>
+                </div>
+
+                <div class="activity-card">
+                    <h3>🚵 Mountain Biking</h3>
+                    <div class="difficulty challenging">Intermediate to Advanced</div>
+                    <p>Navigate over 400 miles of single-track trails through alpine forests and meadows. The Mid Mountain Trail offers stunning views while technical trails like Wasatch Crest provide thrilling challenges.</p>
+                    <p><strong>Best Spots:</strong> Mid Mountain Trail, Wasatch Crest Trail, Park City Mountain Resort</p>
+                    <p><strong>Insider Tip:</strong> Start early in summer to avoid afternoon thunderstorms</p>
+                    <div class="season-tags">
+                        <span class="season-tag">June - October</span>
+                        <span class="season-tag">Epic Views</span>
+                    </div>
+                </div>
+
+                <div class="activity-card">
+                    <h3>🥾 Hiking Adventures</h3>
+                    <div class="difficulty easy">All Levels</div>
+                    <p>Explore pristine wilderness with trails ranging from easy nature walks to challenging summit hikes. The Rail Trail offers family-friendly options while trails like Clayton Peak reward hikers with panoramic views.</p>
+                    <p><strong>Best Spots:</strong> Rail Trail, Clayton Peak, Guardsman Pass</p>
+                    <p><strong>Insider Tip:</strong> Download trail maps offline as cell service can be spotty</p>
+                    <div class="season-tags">
+                        <span class="season-tag">May - October</span>
+                        <span class="season-tag">Family Friendly</span>
+                    </div>
+                </div>
+
+                <div class="activity-card">
+                    <h3>🏔️ Scenic Gondola Rides</h3>
+                    <div class="difficulty easy">All Ages</div>
+                    <p>Enjoy breathtaking 360-degree views without the hike. The Park City Mountain Resort gondola and Deer Valley's Sterling Express provide easy access to alpine dining and stunning vistas.</p>
+                    <p><strong>Best Spots:</strong> Park City Mountain Resort, Deer Valley Resort</p>
+                    <p><strong>Insider Tip:</strong> Perfect for sunset views and alpine dining experiences</p>
+                    <div class="season-tags">
+                        <span class="season-tag">Year-Round</span>
+                        <span class="season-tag">Scenic Views</span>
+                    </div>
+                </div>
+
+                <div class="activity-card">
+                    <h3>🎣 Fly Fishing</h3>
+                    <div class="difficulty moderate">Beginner to Advanced</div>
+                    <p>Cast your line in pristine mountain streams and alpine lakes. The Provo River and local reservoirs offer excellent trout fishing with stunning mountain backdrops.</p>
+                    <p><strong>Best Spots:</strong> Provo River, Jordanelle Reservoir, Rockport Reservoir</p>
+                    <p><strong>Insider Tip:</strong> Early morning and evening provide the best fishing conditions</p>
+                    <div class="season-tags">
+                        <span class="season-tag">May - October</span>
+                        <span class="season-tag">Peaceful</span>
+                    </div>
+                </div>
+
+                <div class="activity-card">
+                    <h3>🏂 Snowboarding</h3>
+                    <div class="difficulty moderate">Intermediate to Advanced</div>
+                    <p>Shred the slopes at two world-renowned resorts. Park City Mountain Resort features extensive terrain parks while Deer Valley offers perfectly groomed runs for carving.</p>
+                    <p><strong>Best Spots:</strong> Park City Mountain Resort, Deer Valley Resort</p>
+                    <p><strong>Insider Tip:</strong> Deer Valley is ski-only, but Park City Mountain welcomes snowboarders</p>
+                    <div class="season-tags">
+                        <span class="season-tag">December - April</span>
+                        <span class="season-tag">Powder Days</span>
+                    </div>
+                </div>
+
+                <div class="activity-card">
+                    <h3>🛷 Winter Activities</h3>
+                    <div class="difficulty easy">All Ages</div>
+                    <p>Experience winter magic with sledding, snowshoeing, and cross-country skiing. The Rail Trail transforms into a winter wonderland perfect for Nordic skiing and snowshoeing.</p>
+                    <p><strong>Best Spots:</strong> Rail Trail, Round Valley, Soldier Hollow</p>
+                    <p><strong>Insider Tip:</strong> City Park has the best sledding hill for families</p>
+                    <div class="season-tags">
+                        <span class="season-tag">December - March</span>
+                        <span class="season-tag">Family Fun</span>
+                    </div>
+                </div>
+
+                <div class="activity-card">
+                    <h3>🧗 Rock Climbing</h3>
+                    <div class="difficulty challenging">Intermediate to Expert</div>
+                    <p>Scale dramatic rock faces with routes for every skill level. The Wasatch Mountains offer excellent limestone and granite climbing just minutes from downtown.</p>
+                    <p><strong>Best Spots:</strong> Little Cottonwood Canyon, Big Cottonwood Canyon</p>
+                    <p><strong>Insider Tip:</strong> Spring and fall offer the best climbing weather</p>
+                    <div class="season-tags">
+                        <span class="season-tag">April - October</span>
+                        <span class="season-tag">Technical</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="local-tips" id="local-tips">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Local Insider Tips</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>🌤️ Weather Wisdom</h4>
+                    <p>Mountain weather changes rapidly. Always check conditions before heading out and pack layers. Summer afternoons often bring thunderstorms, while winter can bring sudden temperature drops.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>🎫 Save Money</h4>
+                    <p>Purchase lift tickets and activity passes online in advance for significant savings. Many hotels offer package deals that include lift tickets and equipment rentals.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>🚌 Transportation</h4>
+                    <p>Park City's free transit system connects all major areas. During ski season, riding the bus is often faster than driving and eliminates parking hassles.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>🍽️ Dining</h4>
+                    <p>Make reservations well in advance, especially during peak seasons. Historic Main Street offers diverse dining options from casual to fine dining.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>🏔️ Altitude Awareness</h4>
+                    <p>Park City sits at 7,000 feet elevation. Stay hydrated, take it easy your first day, and be aware that alcohol affects you more at altitude.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>📱 Apps & Resources</h4>
+                    <p>Download trail maps, weather apps, and resort apps before heading out. Cell service can be spotty in remote areas, so offline maps are essential.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <p>Park City Visitor Information Center<br>
+                    1794 Olympic Parkway<br>
+                    Park City, UT 84098<br>
+                    Phone: (435) 658-9616</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Emergency Contacts</h4>
+                    <p>Park City Police: (435) 615-5500<br>
+                    Park City Fire: (435) 615-5540<br>
+                    Summit County Sheriff: (435) 615-3500<br>
+                    Medical: Park City Hospital (435) 658-7000</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Useful Links</h4>
+                    <p>
+                        <a href="#" onclick="return false;">Park City Mountain Resort</a><br>
+                        <a href="#" onclick="return false;">Deer Valley Resort</a><br>
+                        <a href="#" onclick="return false;">Visit Park City</a><br>
+                        <a href="#" onclick="return false;">Utah State Parks</a>
+                    </p>
+                </div>
+            </div>
+            <p>&copy; 2024 Park City Adventures Guide. Your gateway to Utah's outdoor paradise.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to activity cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Initially hide cards for animation
+        document.querySelectorAll('.activity-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+
+        // Header background opacity on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
+            
+            if (scrolled > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>
