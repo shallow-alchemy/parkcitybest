@@ -101,7 +101,8 @@ description: "Skip the tourist traps. Find the real Park City. Your trusted loca
     <div class="container">
         <h2>Get Notified When New Guides Launch</h2>
         <p>Be the first to know when we publish new Park City guides and updates.</p>
-        <form name="newsletter" method="POST" data-netlify="true" class="newsletter-form">
+        <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="newsletter-form">
+            <input type="hidden" name="bot-field" />
             <div class="form-row">
                 <input type="email" name="email" placeholder="Enter your email" required>
                 <button type="submit" class="btn btn-primary">Subscribe</button>

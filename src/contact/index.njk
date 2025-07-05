@@ -12,7 +12,17 @@ description: "Get in touch with Park City Best. Send us your questions, suggesti
         <p>Have a question about Park City? Found an error in our guide? Want to suggest a restaurant or activity we should feature? Drop us a line!</p>
         
         <div class="contact-form">
-            <form name="contact" method="POST" data-netlify="true">
+            <div class="form-success" id="form-success" style="display: none;">
+                <div class="success-message">
+                    <h3>Thank you for your message!</h3>
+                    <p>We've received your message and will get back to you as soon as possible. We typically respond within 24-48 hours.</p>
+                    <button type="button" class="btn btn-secondary" onclick="resetForm()">Send Another Message</button>
+                </div>
+            </div>
+            
+            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contact-form">
+                <input type="hidden" name="bot-field" />
+                
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" required>
@@ -54,3 +64,52 @@ description: "Get in touch with Park City Best. Send us your questions, suggesti
         </div>
     </div>
 </section>
+
+<script>
+// Handle form submission with custom success message
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contact-form');
+    const successDiv = document.getElementById('form-success');
+    
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Submit form data to Netlify
+        const formData = new FormData(form);
+        
+        fetch('/', {
+            method: 'POST',
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString()
+        })
+        .then(() => {
+            // Show success message and hide form
+            form.style.display = 'none';
+            successDiv.style.display = 'block';
+            
+            // Scroll to success message
+            successDiv.scrollIntoView({ behavior: 'smooth' });
+        })
+        .catch((error) => {
+            alert('There was an error sending your message. Please try again or contact us directly.');
+            console.error('Error:', error);
+        });
+    });
+});
+
+// Reset form function
+function resetForm() {
+    const form = document.getElementById('contact-form');
+    const successDiv = document.getElementById('form-success');
+    
+    // Reset form fields
+    form.reset();
+    
+    // Show form and hide success message
+    form.style.display = 'block';
+    successDiv.style.display = 'none';
+    
+    // Scroll back to form
+    form.scrollIntoView({ behavior: 'smooth' });
+}
+</script>
