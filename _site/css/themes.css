@@ -1,0 +1,199 @@
+/* Theme Definitions for Park City Best
+ * 
+ * Three carefully crafted color themes that reflect Park City's natural beauty
+ * and luxury tourism market. Each theme maintains accessibility standards
+ * while providing distinct visual personalities.
+ */
+
+/* =============================================================================
+   THEME 1: MOUNTAIN LUXURY (DEFAULT)
+   Psychology: Sophisticated, natural, premium
+   Use case: Default theme emphasizing luxury and nature connection
+   ============================================================================= */
+
+:root,
+body.theme-mountain-luxury {
+  /* Primary Colors */
+  --theme-primary: #2D5016;        /* Deep forest green - sophisticated, natural */
+  --theme-secondary: #F8F6F0;      /* Warm cream - luxury, warmth */
+  --theme-accent: #B85450;         /* Rich copper - premium, distinctive */
+  --theme-supporting: #36454F;     /* Charcoal gray - professional, stable */
+  
+  /* Color Tokens - Semantic naming for consistent theming */
+  --color-primary: var(--theme-primary);
+  --color-secondary: var(--theme-secondary);
+  --color-accent: var(--theme-accent);
+  --color-supporting: var(--theme-supporting);
+  
+  /* Text Colors */
+  --theme-text-primary: #2D5016;   /* Forest green for headings */
+  --theme-text-secondary: #36454F; /* Charcoal for body text */
+  --theme-text-on-primary: #F8F6F0; /* Cream on forest green */
+  --theme-text-on-accent: #F8F6F0;  /* Cream on copper */
+  --theme-text-muted: #7A8B72;     /* Muted green for secondary info */
+  
+  /* Background Colors */
+  --theme-bg-primary: #FFFFFF;     /* Pure white primary background */
+  --theme-bg-secondary: #F8F6F0;   /* Warm cream secondary background */
+  --theme-bg-light: #FDFCF8;       /* Very light cream */
+  --theme-bg-dark: #2D5016;        /* Forest green dark background */
+  
+  /* Border Colors */
+  --theme-border-light: #E8E6E0;   /* Light cream border */
+  --theme-border-medium: #D0CCC0;  /* Medium cream border */
+  --theme-border-dark: #B8B4A8;    /* Dark cream border */
+  
+  /* Interactive States */
+  --theme-hover-primary: #1F3A0F;  /* Darker forest green */
+  --theme-hover-secondary: #F0EDE5; /* Darker cream */
+  --theme-hover-accent: #A04B47;   /* Darker copper */
+  --theme-focus: #B85450;          /* Copper for focus states */
+  
+  /* Status Colors */
+  --theme-success: #4A7C59;        /* Forest green success */
+  --theme-warning: #D4A574;        /* Warm gold warning */
+  --theme-error: #B85450;          /* Copper error */
+  --theme-info: #6B8CAE;           /* Muted blue info */
+  
+  /* Additional UI Colors */
+  --theme-white: #FFFFFF;          /* Pure white */
+  --theme-black: #000000;          /* Pure black */
+  --theme-shadow-color: rgba(45, 80, 22, 0.1); /* Shadow with primary color tint */
+}
+
+/* =============================================================================
+   THEME 2: ALPINE MODERN
+   Psychology: Clean, contemporary, sophisticated
+   Use case: Modern, minimalist aesthetic for tech-savvy users
+   ============================================================================= */
+
+body.theme-alpine-modern {
+  /* Primary Colors */
+  --theme-primary: #4A5D6C;        /* Slate blue-gray - modern, professional */
+  --theme-secondary: #FFFFFF;      /* Clean white - minimalist, fresh */
+  --theme-accent: #D4A574;         /* Warm gold - luxury accent */
+  --theme-supporting: #1E2A3A;     /* Deep navy - depth, sophistication */
+  
+  /* Text Colors */
+  --theme-text-primary: #1E2A3A;   /* Deep navy for headings */
+  --theme-text-secondary: #4A5D6C; /* Slate for body text */
+  --theme-text-on-primary: #FFFFFF; /* White on slate */
+  --theme-text-on-accent: #1E2A3A;  /* Navy on gold */
+  --theme-text-muted: #8B9AAB;     /* Muted slate for secondary info */
+  
+  /* Background Colors */
+  --theme-bg-primary: #FFFFFF;     /* Pure white primary */
+  --theme-bg-secondary: #F8F9FA;   /* Very light gray */
+  --theme-bg-light: #FAFBFC;       /* Near white */
+  --theme-bg-dark: #1E2A3A;        /* Deep navy dark background */
+  
+  /* Border Colors */
+  --theme-border-light: #E9ECEF;   /* Light gray border */
+  --theme-border-medium: #DEE2E6;  /* Medium gray border */
+  --theme-border-dark: #CED4DA;    /* Dark gray border */
+  
+  /* Interactive States */
+  --theme-hover-primary: #3A4A57;  /* Darker slate */
+  --theme-hover-secondary: #F1F3F4; /* Darker light gray */
+  --theme-hover-accent: #C19660;   /* Darker warm gold */
+  --theme-focus: #D4A574;          /* Gold for focus states */
+  
+  /* Status Colors */
+  --theme-success: #28A745;        /* Standard green success */
+  --theme-warning: #FFC107;        /* Standard yellow warning */
+  --theme-error: #DC3545;          /* Standard red error */
+  --theme-info: #17A2B8;           /* Standard blue info */
+  
+  /* Additional UI Colors */
+  --theme-white: #FFFFFF;          /* Pure white */
+  --theme-black: #000000;          /* Pure black */
+  --theme-shadow-color: rgba(74, 93, 108, 0.1); /* Shadow with primary color tint */
+}
+
+/* =============================================================================
+   THEME 3: UTAH EARTH TONES
+   Psychology: Natural, warm, approachable
+   Use case: Emphasizing Utah's natural landscape and outdoor activities
+   ============================================================================= */
+
+body.theme-utah-earth {
+  /* Primary Colors */
+  --theme-primary: #9CAF88;        /* Sage green - natural, calming */
+  --theme-secondary: #E6D2AA;      /* Sandstone beige - warm, earthy */
+  --theme-accent: #CC6B49;         /* Burnt orange - energetic, distinctive */
+  --theme-supporting: #3E2723;     /* Charcoal brown - grounding, natural */
+  
+  /* Text Colors */
+  --theme-text-primary: #3E2723;   /* Charcoal brown for headings */
+  --theme-text-secondary: #5D4E37; /* Dark brown for body text */
+  --theme-text-on-primary: #FFFFFF; /* White on sage green */
+  --theme-text-on-accent: #FFFFFF;  /* White on burnt orange */
+  --theme-text-muted: #8A7F6B;     /* Muted brown for secondary info */
+  
+  /* Background Colors */
+  --theme-bg-primary: #FFFFFF;     /* Pure white primary */
+  --theme-bg-secondary: #E6D2AA;   /* Sandstone beige secondary */
+  --theme-bg-light: #F5F0E8;       /* Very light beige */
+  --theme-bg-dark: #3E2723;        /* Charcoal brown dark background */
+  
+  /* Border Colors */
+  --theme-border-light: #E8DCC6;   /* Light beige border */
+  --theme-border-medium: #D4C4A8;  /* Medium beige border */
+  --theme-border-dark: #C0AB8A;    /* Dark beige border */
+  
+  /* Interactive States */
+  --theme-hover-primary: #8A9B76;  /* Darker sage green */
+  --theme-hover-secondary: #DBC797; /* Darker sandstone */
+  --theme-hover-accent: #B85A3E;   /* Darker burnt orange */
+  --theme-focus: #CC6B49;          /* Burnt orange for focus states */
+  
+  /* Status Colors */
+  --theme-success: #7CB342;        /* Natural green success */
+  --theme-warning: #FFB74D;        /* Warm orange warning */
+  --theme-error: #CC6B49;          /* Burnt orange error */
+  --theme-info: #26A69A;           /* Teal info */
+  
+  /* Additional UI Colors */
+  --theme-white: #FFFFFF;          /* Pure white */
+  --theme-black: #000000;          /* Pure black */
+  --theme-shadow-color: rgba(156, 175, 136, 0.1); /* Shadow with primary color tint */
+}
+
+/* =============================================================================
+   THEME SWITCHING UTILITY
+   Simple one-line change to switch themes site-wide
+   ============================================================================= */
+
+/*
+To switch themes, change the class on the <body> element:
+
+Default (Mountain Luxury): <body class="theme-mountain-luxury">
+Alpine Modern: <body class="theme-alpine-modern">
+Utah Earth Tones: <body class="theme-utah-earth">
+
+Or set on :root for global application without body class.
+*/
+
+/* Dark mode adaptations for all themes */
+@media (prefers-color-scheme: dark) {
+  .theme-mountain-luxury {
+    --theme-bg-primary: #1A1F14;
+    --theme-bg-secondary: #2D5016;
+    --theme-text-primary: #F8F6F0;
+    --theme-text-secondary: #E0DDD5;
+  }
+  
+  body.theme-alpine-modern {
+    --theme-bg-primary: #1E2A3A;
+    --theme-bg-secondary: #4A5D6C;
+    --theme-text-primary: #FFFFFF;
+    --theme-text-secondary: #E9ECEF;
+  }
+  
+  body.theme-utah-earth {
+    --theme-bg-primary: #2C1F1A;
+    --theme-bg-secondary: #3E2723;
+    --theme-text-primary: #E6D2AA;
+    --theme-text-secondary: #D4C4A8;
+  }
+}
