@@ -722,8 +722,311 @@ body {
     background: var(--secondary-color);
 }
 
+/* Homepage Specific Styles */
+.hero-tagline {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-large {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
+
+/* What Makes Us Different Section */
+.difference-section {
+    background: var(--white);
+}
+
+.difference-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.difference-item {
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.difference-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.difference-item p {
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* Featured Section */
+.featured-section {
+    background: var(--bg-light);
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.featured-main {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.featured-badge {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    background: var(--accent-color);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.featured-main h3 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.featured-main p {
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.featured-highlights {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.featured-highlights li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e0e0e0;
+    color: var(--text-dark);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.featured-highlights li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.featured-coming {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.coming-soon-card {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.coming-soon-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.coming-soon-card p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.coming-label {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #e0e0e0;
+    color: var(--text-light);
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Trust Section */
+.trust-section {
+    background: var(--white);
+}
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0 3rem;
+}
+
+.trust-item {
+    text-align: center;
+    padding: 1rem;
+}
+
+.trust-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.trust-item p {
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.trust-statement {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    font-style: italic;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Newsletter Section */
+.newsletter-section {
+    background: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+}
+
+.newsletter-section h2 {
+    color: var(--white);
+}
+
+.newsletter-section p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.newsletter-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.form-row input[type="email"] {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-note {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Social Proof Section */
+.social-proof-section {
+    background: var(--bg-light);
+}
+
+.social-proof-section .lead {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--text-dark);
+}
+
+.restaurant-mentions {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    text-align: center;
+    line-height: 1.8;
+}
+
+.restaurant-mentions strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Container utility */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+.contact-info {
+    margin-top: 3rem;
+    padding-top: 3rem;
+    border-top: 1px solid #e0e0e0;
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-tagline {
+        font-size: 1.2rem;
+    }
+    
     .restaurants-hero h1 {
         font-size: 2rem;
     }
@@ -756,5 +1059,33 @@ body {
     .restaurant-highlights {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+    }
+    
+    .featured-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-row {
+        flex-direction: column;
+    }
+    
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        box-shadow: var(--shadow);
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .nav-menu.active {
+        display: flex;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
     }
 }

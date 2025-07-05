@@ -38,7 +38,7 @@
     <header class="site-header">
         <nav class="main-nav">
             <div class="nav-container">
-                <a href="/" class="logo">Park City Guide</a>
+                <a href="/" class="logo">Park City Best</a>
                 <button class="mobile-menu-toggle" aria-label="Toggle menu">
                     <span></span>
                     <span></span>
@@ -47,14 +47,8 @@
                 <ul class="nav-menu">
                     <li><a href="/" {% if page.url == '/' %}class="active"{% endif %}>Home</a></li>
                     <li><a href="/restaurants/" {% if page.url == '/restaurants/' %}class="active"{% endif %}>Restaurants</a></li>
-                    <li><a href="/skiing-snowboarding/" {% if page.url == '/skiing-snowboarding/' %}class="active"{% endif %}>Skiing</a></li>
-                    <li><a href="/hiking-trails/" {% if page.url == '/hiking-trails/' %}class="active"{% endif %}>Hiking</a></li>
-                    <li><a href="/mountain-biking/" {% if page.url == '/mountain-biking/' %}class="active"{% endif %}>Biking</a></li>
-                    <li><a href="/events-festivals/" {% if page.url == '/events-festivals/' %}class="active"{% endif %}>Events</a></li>
-                    <li><a href="/accommodations/" {% if page.url == '/accommodations/' %}class="active"{% endif %}>Stay</a></li>
-                    <li><a href="/family-activities/" {% if page.url == '/family-activities/' %}class="active"{% endif %}>Family</a></li>
-                    <li><a href="/shopping-spas/" {% if page.url == '/shopping-spas/' %}class="active"{% endif %}>Shopping</a></li>
-                    <li><a href="/plan-your-visit/" {% if page.url == '/plan-your-visit/' %}class="active"{% endif %}>Plan</a></li>
+                    <li><a href="/about/" {% if page.url == '/about/' %}class="active"{% endif %}>About</a></li>
+                    <li><a href="/contact/" {% if page.url == '/contact/' %}class="active"{% endif %}>Contact</a></li>
                 </ul>
             </div>
         </nav>
@@ -69,19 +63,19 @@
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
+                    <li><a href="/">Home</a></li>
                     <li><a href="/restaurants/">Best Restaurants</a></li>
-                    <li><a href="/skiing-snowboarding/">Skiing & Snowboarding</a></li>
-                    <li><a href="/hiking-trails/">Hiking Trails</a></li>
-                    <li><a href="/mountain-biking/">Mountain Biking</a></li>
+                    <li><a href="/about/">About</a></li>
+                    <li><a href="/contact/">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Plan Your Visit</h3>
+                <h3>Coming Soon</h3>
                 <ul>
-                    <li><a href="/accommodations/">Where to Stay</a></li>
-                    <li><a href="/events-festivals/">Events Calendar</a></li>
-                    <li><a href="/plan-your-visit/">Travel Info</a></li>
-                    <li><a href="/family-activities/">Family Activities</a></li>
+                    <li>Winter Activities</li>
+                    <li>Hotels & Accommodations</li>
+                    <li>Hiking Trails</li>
+                    <li>Local Events</li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -102,7 +96,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; {% year %} Park City Guide. All rights reserved.</p>
+            <p>&copy; {% year %} Park City Best. All rights reserved.</p>
         </div>
     </footer>
 
