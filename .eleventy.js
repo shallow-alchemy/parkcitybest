@@ -1,17 +1,11 @@
 const htmlmin = require("html-minifier");
-const sitemap = require("@quasibit/eleventy-plugin-sitemap");
 
 module.exports = function(eleventyConfig) {
-  // Add sitemap plugin
-  eleventyConfig.addPlugin(sitemap, {
-    hostname: "https://parkcitybest.com",
-  });
   // Copy static files
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy("robots.txt");
-  eleventyConfig.addPassthroughCopy("src/sitemap.xml");
 
   // Minify HTML for production
   eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
