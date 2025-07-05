@@ -1,0 +1,310 @@
+{
+  "restaurants": [
+    {
+      "name": "Riverhorse on Main",
+      "cuisine": "American",
+      "priceRange": "$$$$",
+      "location": "Main Street",
+      "contact": {
+        "phone": "435-649-3536",
+        "website": "https://riverhorseparkcity.com",
+        "address": "540 Main St, Park City, UT 84060"
+      },
+      "hours": "Daily 5:30pm-10pm",
+      "specialties": ["Macadamia Crusted Halibut", "Elk Tenderloin", "Oysters on Half Shell"],
+      "occasions": ["date-night", "business", "special-occasion"],
+      "features": ["reservations-required", "full-bar", "private-dining"],
+      "description": "Upscale American cuisine in an elegant historic building. Known for exceptional service and romantic atmosphere with exposed brick walls and intimate lighting.",
+      "lastUpdated": "2025-07-05"
+    },
+    {
+      "name": "Handle",
+      "cuisine": "American",
+      "priceRange": "$$$",
+      "location": "Main Street",
+      "contact": {
+        "phone": "435-602-1155",
+        "website": "https://handleparkcity.com",
+        "address": "136 Heber Ave, Park City, UT 84060"
+      },
+      "hours": "Mon-Thu 5pm-10pm, Fri-Sun 11am-10pm",
+      "specialties": ["Fried Chicken", "Mac & Cheese", "Bourbon Selection"],
+      "occasions": ["apres-ski", "casual", "groups"],
+      "features": ["patio", "takeout", "full-bar", "weekend-brunch"],
+      "description": "Modern American comfort food with a sophisticated twist. Popular après-ski spot with hearty portions and extensive whiskey menu.",
+      "lastUpdated": "2025-07-05"
+    },
+    {
+      "name": "Yuki Yama Sushi",
+      "cuisine": "Japanese",
+      "priceRange": "$$$",
+      "location": "Main Street",
+      "contact": {
+        "phone": "435-649-6293",
+        "website": "https://yukiyamasushi.com",
+        "address": "586 Main St, Park City, UT 84060"
+      },
+      "hours": "Daily 5pm-10pm",
+      "specialties": ["Omakase", "Signature Rolls", "Fresh Wasabi"],
+      "occasions": ["date-night", "business", "sushi-lovers"],
+      "features": ["sushi-bar", "reservations", "sake-menu"],
+      "description": "Authentic Japanese cuisine with fresh fish flown in daily. Intimate sushi bar experience with skilled chefs and creative specialty rolls.",
+      "lastUpdated": "2025-07-05"
+    },
+    {
+      "name": "Tupelo",
+      "cuisine": "American",
+      "priceRange": "$$$",
+      "location": "Main Street",
+      "contact": {
+        "phone": "435-615-7700",
+        "website": "https://tupeloparkcity.com",
+        "address": "508 Main St, Park City, UT 84060"
+      },
+      "hours": "Daily 5:30pm-10pm",
+      "specialties": ["Honey Fried Chicken", "Shrimp & Grits", "Trout"],
+      "occasions": ["date-night", "groups", "special-occasion"],
+      "features": ["reservations", "full-bar", "gluten-free-options"],
+      "description": "Contemporary American dining with Southern influences. Warm, inviting atmosphere perfect for both intimate dinners and group celebrations.",
+      "lastUpdated": "2025-07-05"
+    },
+    {
+      "name": "High West Distillery",
+      "cuisine": "American",
+      "priceRange": "$$$",
+      "location": "Old Town",
+      "contact": {
+        "phone": "435-649-8300",
+        "website": "https://highwest.com",
+        "address": "703 Park Ave, Park City, UT 84060"
+      },
+      "hours": "Sun-Thu 11am-9pm, Fri-Sat 11am-10pm",
+      "specialties": ["Whiskey Flights", "Bison Burger", "Elk Chili"],
+      "occasions": ["apres-ski", "casual", "groups", "tourists"],
+      "features": ["distillery-tours", "patio", "takeout", "live-music"],
+      "description": "World's only ski-in gastro-distillery. Mountain comfort food paired with award-winning whiskeys in a rustic Western atmosphere.",
+      "lastUpdated": "2025-07-05"
+    },
+    {
+      "name": "Grappa Italian Restaurant",
+      "cuisine": "Italian",
+      "priceRange": "$$$",
+      "location": "Main Street",
+      "contact": {
+        "phone": "435-645-0636",
+        "website": "https://grapparestaurant.com",
+        "address": "151 Main St, Park City, UT 84060"
+      },
+      "hours": "Daily 5pm-10pm",
+      "specialties": ["Osso Buco", "House-made Pasta", "Wine Selection"],
+      "occasions": ["date-night", "family", "special-occasion"],
+      "features": ["reservations", "wine-cellar", "private-dining"],
+      "description": "Authentic Italian cuisine in a romantic basement setting. Extensive wine list and traditional dishes made with imported ingredients.",
+      "lastUpdated": "2025-07-05"
+    },
+    {
+      "name": "Versante Hearth + Bar",
+      "cuisine": "Italian",
+      "priceRange": "$$$",
+      "location": "Canyons Village",
+      "contact": {
+        "phone": "435-615-5888",
+        "website": "https://versanteparkcity.com",
+        "address": "3720 Sundial Ct, Park City, UT 84098"
+      },
+      "hours": "Daily 7am-10pm",
+      "specialties": ["Wood-Fired Pizza", "House-made Pasta", "Charcuterie"],
+      "occasions": ["apres-ski", "family", "casual"],
+      "features": ["slope-side", "patio", "breakfast", "kids-menu"],
+      "description": "Modern Italian with spectacular mountain views. Convenient slope-side location perfect for breakfast, lunch, or après-ski dining.",
+      "lastUpdated": "2025-07-05"
+    },
+    {
+      "name": "Freshies Lobster Co.",
+      "cuisine": "Seafood",
+      "priceRange": "$$",
+      "location": "Prospector",
+      "contact": {
+        "phone": "435-631-7824",
+        "website": "https://freshieslobster.com",
+        "address": "1890 Bonanza Dr, Park City, UT 84060"
+      },
+      "hours": "Daily 11am-9pm",
+      "specialties": ["Lobster Rolls", "Clam Chowder", "Fish Tacos"],
+      "occasions": ["casual", "lunch", "family"],
+      "features": ["takeout", "patio", "gluten-free-options", "quick-service"],
+      "description": "East Coast-style seafood shack bringing fresh lobster to the mountains. Casual atmosphere with premium ingredients at reasonable prices.",
+      "lastUpdated": "2025-07-05"
+    },
+    {
+      "name": "Blind Dog Restaurant & Sushi",
+      "cuisine": "Japanese/American",
+      "priceRange": "$$$",
+      "location": "Prospector",
+      "contact": {
+        "phone": "435-655-0800",
+        "website": "https://blinddogrestaurants.com",
+        "address": "1781 Sidewinder Dr, Park City, UT 84060"
+      },
+      "hours": "Mon-Sat 5pm-10pm, Sun 5pm-9pm",
+      "specialties": ["Sushi Boats", "Tuna Poke", "Wagyu Beef"],
+      "occasions": ["date-night", "groups", "sushi-lovers"],
+      "features": ["happy-hour", "full-bar", "private-rooms"],
+      "description": "Unique combination of sushi bar and grill. Creative fusion menu in a lively atmosphere with something for everyone.",
+      "lastUpdated": "2025-07-05"
+    },
+    {
+      "name": "Powder at Waldorf Astoria",
+      "cuisine": "American",
+      "priceRange": "$$$$",
+      "location": "Canyons Village",
+      "contact": {
+        "phone": "435-647-5566",
+        "website": "https://waldorfastoriaparkcity.com",
+        "address": "2100 Frostwood Blvd, Park City, UT 84098"
+      },
+      "hours": "Tue-Sat 6pm-10pm",
+      "specialties": ["Wagyu Beef", "Seafood Tower", "Chef's Tasting Menu"],
+      "occasions": ["special-occasion", "business", "date-night"],
+      "features": ["valet-parking", "dress-code", "wine-pairing", "ski-valet"],
+      "description": "Fine dining at its best with modern American cuisine. Elegant mountain lodge atmosphere with impeccable service and seasonal menus.",
+      "lastUpdated": "2025-07-05"
+    },
+    {
+      "name": "Silver Star Cafe",
+      "cuisine": "American",
+      "priceRange": "$$",
+      "location": "Silver Lake Village",
+      "contact": {
+        "phone": "435-655-3456",
+        "website": "https://silverstarcafe.com",
+        "address": "1825 Three Kings Dr, Park City, UT 84060"
+      },
+      "hours": "Daily 11:30am-3pm, 5:30pm-9pm",
+      "specialties": ["Elk Burger", "Trout", "Vegetarian Options"],
+      "occasions": ["lunch", "apres-ski", "casual"],
+      "features": ["mid-mountain-dining", "patio", "reservations"],
+      "description": "Beloved mid-mountain restaurant accessible by skis or scenic chairlift ride in summer. Rustic charm with locally-sourced ingredients.",
+      "lastUpdated": "2025-07-05"
+    },
+    {
+      "name": "Chimayo",
+      "cuisine": "Mexican",
+      "priceRange": "$$$",
+      "location": "Main Street",
+      "contact": {
+        "phone": "435-649-6222",
+        "website": "https://chimayorestaurant.com",
+        "address": "368 Main St, Park City, UT 84060"
+      },
+      "hours": "Daily 5pm-10pm",
+      "specialties": ["Tableside Guacamole", "Mole", "Margaritas"],
+      "occasions": ["date-night", "groups", "happy-hour"],
+      "features": ["patio", "full-bar", "gluten-free-options", "vegetarian-friendly"],
+      "description": "Upscale Southwestern cuisine with creative cocktails. Vibrant atmosphere and artistic presentation of traditional Mexican flavors.",
+      "lastUpdated": "2025-07-05"
+    },
+    {
+      "name": "Eating Establishment",
+      "cuisine": "American",
+      "priceRange": "$$",
+      "location": "Main Street",
+      "contact": {
+        "phone": "435-649-8284",
+        "website": "https://eatingestablishment.net",
+        "address": "317 Main St, Park City, UT 84060"
+      },
+      "hours": "Daily 8am-9pm",
+      "specialties": ["Breakfast All Day", "Prime Rib", "Pancakes"],
+      "occasions": ["breakfast", "family", "casual", "budget-friendly"],
+      "features": ["no-reservations", "kids-menu", "takeout"],
+      "description": "Park City institution since 1972. No-frills comfort food with generous portions and reasonable prices. Expect a wait during peak times.",
+      "lastUpdated": "2025-07-05"
+    },
+    {
+      "name": "Reef's Kitchen",
+      "cuisine": "Mediterranean",
+      "priceRange": "$$",
+      "location": "Kimball Junction",
+      "contact": {
+        "phone": "435-200-0188",
+        "website": "https://reefskitchen.com",
+        "address": "1612 Ute Blvd #102, Park City, UT 84098"
+      },
+      "hours": "Mon-Sat 11am-9pm",
+      "specialties": ["Falafel", "Shawarma", "Fresh Pita"],
+      "occasions": ["lunch", "casual", "healthy", "quick-bite"],
+      "features": ["takeout", "catering", "vegetarian-options", "vegan-options"],
+      "description": "Fresh Mediterranean cuisine made from scratch daily. Healthy, flavorful options perfect for a quick lunch or casual dinner.",
+      "lastUpdated": "2025-07-05"
+    },
+    {
+      "name": "Firewood",
+      "cuisine": "American",
+      "priceRange": "$$$",
+      "location": "Main Street",
+      "contact": {
+        "phone": "435-252-9900",
+        "website": "https://firewoodonmain.com",
+        "address": "306 Main St, Park City, UT 84060"
+      },
+      "hours": "Daily 5pm-10pm",
+      "specialties": ["Wood-Fired Steaks", "Roasted Vegetables", "Craft Cocktails"],
+      "occasions": ["date-night", "business", "special-occasion"],
+      "features": ["reservations", "full-bar", "gluten-free-options"],
+      "description": "Modern steakhouse with live-fire cooking. Sophisticated atmosphere with locally-sourced ingredients and innovative preparations.",
+      "lastUpdated": "2025-07-05"
+    },
+    {
+      "name": "Apex at Montage",
+      "cuisine": "American",
+      "priceRange": "$$$$",
+      "location": "Deer Valley",
+      "contact": {
+        "phone": "435-604-1300",
+        "website": "https://montagehotels.com/deervally",
+        "address": "9100 Marsac Ave, Park City, UT 84060"
+      },
+      "hours": "Thu-Mon 6pm-9:30pm",
+      "specialties": ["Tasting Menu", "Wine Pairings", "Seasonal Ingredients"],
+      "occasions": ["special-occasion", "romantic", "foodie"],
+      "features": ["valet-parking", "dress-code", "chef's-table", "views"],
+      "description": "AAA Five Diamond restaurant offering refined American cuisine. Stunning mountain views and world-class service for unforgettable dining.",
+      "lastUpdated": "2025-07-05"
+    },
+    {
+      "name": "Valley Brook Tea House",
+      "cuisine": "Chinese",
+      "priceRange": "$$",
+      "location": "Prospector",
+      "contact": {
+        "phone": "435-615-8863",
+        "website": "https://valleybrookteahouse.com",
+        "address": "1760 Park Ave, Park City, UT 84060"
+      },
+      "hours": "Tue-Sun 11:30am-9pm",
+      "specialties": ["Dim Sum", "Peking Duck", "Hand-Pulled Noodles"],
+      "occasions": ["family", "casual", "authentic"],
+      "features": ["takeout", "vegetarian-options", "tea-selection"],
+      "description": "Authentic Chinese cuisine with traditional tea service. Family-owned restaurant offering genuine flavors in a casual setting.",
+      "lastUpdated": "2025-07-05"
+    },
+    {
+      "name": "Fletcher's",
+      "cuisine": "American",
+      "priceRange": "$$$",
+      "location": "Main Street",
+      "contact": {
+        "phone": "435-649-1477",
+        "website": "https://fletcherspc.com",
+        "address": "427 Main St, Park City, UT 84060"
+      },
+      "hours": "Daily 8am-10pm",
+      "specialties": ["Eggs Benedict", "Burger", "Cocktails"],
+      "occasions": ["breakfast", "brunch", "casual", "apres-ski"],
+      "features": ["dog-friendly-patio", "full-bar", "late-night", "breakfast-all-day"],
+      "description": "All-day dining with something for everyone. Popular brunch spot with creative cocktails and comfortable atmosphere.",
+      "lastUpdated": "2025-07-05"
+    }
+  ]
+}

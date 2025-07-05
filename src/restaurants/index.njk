@@ -1,0 +1,243 @@
+---
+title: "Best Restaurants in Park City"
+description: "Discover the best restaurants in Park City, Utah. From fine dining to casual spots, find the perfect place for every occasion with our curated guide."
+layout: base.njk
+---
+
+<section class="page-hero restaurants-hero">
+    <h1>Best Restaurants in Park City</h1>
+    <p>Your curated guide to Park City's finest dining experiences</p>
+</section>
+
+<section class="filter-section">
+    <div class="container">
+        <div class="filter-controls">
+            <div class="filter-group">
+                <label for="price-filter">Price Range</label>
+                <select id="price-filter" class="filter-select">
+                    <option value="">All Prices</option>
+                    <option value="$">$ - Budget Friendly</option>
+                    <option value="$$">$$ - Moderate</option>
+                    <option value="$$$">$$$ - Upscale</option>
+                    <option value="$$$$">$$$$ - Fine Dining</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="cuisine-filter">Cuisine Type</label>
+                <select id="cuisine-filter" class="filter-select">
+                    <option value="">All Cuisines</option>
+                    <option value="American">American</option>
+                    <option value="Italian">Italian</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="Mexican">Mexican</option>
+                    <option value="Seafood">Seafood</option>
+                    <option value="Mediterranean">Mediterranean</option>
+                    <option value="Chinese">Chinese</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="occasion-filter">Occasion</label>
+                <select id="occasion-filter" class="filter-select">
+                    <option value="">All Occasions</option>
+                    <option value="date-night">Date Night</option>
+                    <option value="family">Family Friendly</option>
+                    <option value="apres-ski">Après-Ski</option>
+                    <option value="business">Business Dining</option>
+                    <option value="casual">Casual</option>
+                    <option value="special-occasion">Special Occasion</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="location-filter">Location</label>
+                <select id="location-filter" class="filter-select">
+                    <option value="">All Locations</option>
+                    <option value="Main Street">Main Street</option>
+                    <option value="Old Town">Old Town</option>
+                    <option value="Canyons Village">Canyons Village</option>
+                    <option value="Deer Valley">Deer Valley</option>
+                    <option value="Kimball Junction">Kimball Junction</option>
+                    <option value="Prospector">Prospector</option>
+                    <option value="Silver Lake Village">Silver Lake Village</option>
+                </select>
+            </div>
+            
+            <button class="clear-filters" onclick="clearAllFilters()">Clear All</button>
+        </div>
+        
+        <div class="results-count">
+            <span id="results-count">Showing <span id="count-number">{{ restaurants.restaurants.length }}</span> restaurants</span>
+        </div>
+    </div>
+</section>
+
+<section class="restaurants-grid container">
+    <div class="grid" id="restaurants-container">
+        {% for restaurant in restaurants.restaurants %}
+        <article class="restaurant-card" 
+                 data-price="{{ restaurant.priceRange }}"
+                 data-cuisine="{{ restaurant.cuisine }}"
+                 data-occasions="{{ restaurant.occasions | join(',') }}"
+                 data-location="{{ restaurant.location }}">
+            <div class="card-header">
+                <h3>{{ restaurant.name }}</h3>
+                <span class="price-indicator">{{ restaurant.priceRange }}</span>
+            </div>
+            
+            <div class="card-tags">
+                <span class="cuisine-tag">{{ restaurant.cuisine }}</span>
+                <span class="location-tag">{{ restaurant.location }}</span>
+            </div>
+            
+            <div class="card-body">
+                <p class="description">{{ restaurant.description }}</p>
+                
+                <div class="specialties">
+                    <strong>Must Try:</strong>
+                    <ul>
+                        {% for specialty in restaurant.specialties %}
+                        <li>{{ specialty }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                
+                <div class="practical-info">
+                    <div class="info-item">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        <span>{{ restaurant.hours }}</span>
+                    </div>
+                    
+                    <div class="info-item">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        <a href="tel:{{ restaurant.contact.phone }}">{{ restaurant.contact.phone }}</a>
+                    </div>
+                    
+                    <div class="info-item">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <span>{{ restaurant.contact.address }}</span>
+                    </div>
+                </div>
+                
+                <div class="card-features">
+                    {% for feature in restaurant.features %}
+                    <span class="feature-tag">{{ feature | replace("-", " ") | title }}</span>
+                    {% endfor %}
+                </div>
+                
+                <div class="card-footer">
+                    {% if restaurant.contact.website %}
+                    <a href="{{ restaurant.contact.website }}" target="_blank" rel="noopener" class="btn-website">Visit Website</a>
+                    {% endif %}
+                    <span class="last-updated">Updated: {{ restaurant.lastUpdated }}</span>
+                </div>
+            </div>
+        </article>
+        {% endfor %}
+    </div>
+    
+    <div class="no-results" id="no-results" style="display: none;">
+        <p>No restaurants match your selected filters. Try adjusting your criteria.</p>
+    </div>
+</section>
+
+<section class="restaurant-info">
+    <div class="container">
+        <h2>About Our Restaurant Guide</h2>
+        <p>We've carefully curated this selection of Park City's best restaurants to help you find the perfect dining experience. Unlike other guides that overwhelm you with endless options, we focus on quality over quantity, featuring only the establishments that consistently deliver exceptional experiences.</p>
+        
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>Our Selection Process</h3>
+                <p>Every restaurant in our guide has been thoroughly researched, with verified hours, contact information, and pricing. We regularly update our listings to ensure accuracy.</p>
+            </div>
+            
+            <div class="info-card">
+                <h3>Price Guide</h3>
+                <ul>
+                    <li><strong>$</strong> - Under $15 per person</li>
+                    <li><strong>$$</strong> - $15-30 per person</li>
+                    <li><strong>$$$</strong> - $30-50 per person</li>
+                    <li><strong>$$$$</strong> - $50+ per person</li>
+                </ul>
+            </div>
+            
+            <div class="info-card">
+                <h3>Reservation Tips</h3>
+                <p>During peak season (December-March and July-August), we recommend making reservations at least 2-3 days in advance for popular restaurants, especially for weekend dinners.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+// Restaurant filtering functionality
+function filterRestaurants() {
+    const priceFilter = document.getElementById('price-filter').value;
+    const cuisineFilter = document.getElementById('cuisine-filter').value;
+    const occasionFilter = document.getElementById('occasion-filter').value;
+    const locationFilter = document.getElementById('location-filter').value;
+    
+    const cards = document.querySelectorAll('.restaurant-card');
+    let visibleCount = 0;
+    
+    cards.forEach(card => {
+        const price = card.dataset.price;
+        const cuisine = card.dataset.cuisine;
+        const occasions = card.dataset.occasions.split(',');
+        const location = card.dataset.location;
+        
+        const priceMatch = !priceFilter || price === priceFilter;
+        const cuisineMatch = !cuisineFilter || cuisine === cuisineFilter;
+        const occasionMatch = !occasionFilter || occasions.includes(occasionFilter);
+        const locationMatch = !locationFilter || location === locationFilter;
+        
+        if (priceMatch && cuisineMatch && occasionMatch && locationMatch) {
+            card.style.display = 'block';
+            visibleCount++;
+        } else {
+            card.style.display = 'none';
+        }
+    });
+    
+    // Update results count
+    document.getElementById('count-number').textContent = visibleCount;
+    
+    // Show/hide no results message
+    const noResults = document.getElementById('no-results');
+    const container = document.getElementById('restaurants-container');
+    if (visibleCount === 0) {
+        noResults.style.display = 'block';
+        container.style.display = 'none';
+    } else {
+        noResults.style.display = 'none';
+        container.style.display = 'grid';
+    }
+}
+
+// Clear all filters
+function clearAllFilters() {
+    document.getElementById('price-filter').value = '';
+    document.getElementById('cuisine-filter').value = '';
+    document.getElementById('occasion-filter').value = '';
+    document.getElementById('location-filter').value = '';
+    filterRestaurants();
+}
+
+// Add event listeners
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('price-filter').addEventListener('change', filterRestaurants);
+    document.getElementById('cuisine-filter').addEventListener('change', filterRestaurants);
+    document.getElementById('occasion-filter').addEventListener('change', filterRestaurants);
+    document.getElementById('location-filter').addEventListener('change', filterRestaurants);
+});
+</script>
