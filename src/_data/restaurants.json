@@ -2,7 +2,7 @@
   "restaurants": [
     {
       "name": "Riverhorse on Main",
-      "cuisine": "New American (French/Italian influences)",
+      "cuisine": "New American",
       "priceRange": "$$$$",
       "location": "Main Street",
       "contact": {
@@ -107,7 +107,7 @@
     },
     {
       "name": "The Mariposa",
-      "cuisine": "Contemporary American (Tasting Menus)",
+      "cuisine": "Contemporary American",
       "priceRange": "$$$$",
       "location": "Silver Lake Village",
       "contact": {
@@ -175,7 +175,7 @@
     },
     {
       "name": "Silver Star Café",
-      "cuisine": "New American (Roots Cuisine)",
+      "cuisine": "New American/Roots",
       "priceRange": "$$$",
       "location": "Silver Star Village",
       "contact": {

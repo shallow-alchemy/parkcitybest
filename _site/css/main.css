@@ -29,6 +29,7 @@
   /* Utility Colors */
   --color-white: #FFFFFF;
   --color-black: #000000;
+  --color-success: #2D5016;
   
   /* Spacing Scale */
   --space-xs: 0.25rem;
@@ -102,6 +103,8 @@ body.theme-winter {
   --color-hover-primary: #3A4A57;  /* Darker slate */
   --color-hover-secondary: #F1F3F4; /* Darker light gray */
   --color-hover-accent: #C19660;   /* Darker warm gold */
+  
+  --color-success: #4A5D6C;  /* Slate blue-gray */
 }
 
 /* Autumn Theme Override */
@@ -125,6 +128,8 @@ body.theme-autumn {
   --color-hover-primary: #8A9B76;  /* Darker sage green */
   --color-hover-secondary: #DBC797; /* Darker sandstone */
   --color-hover-accent: #B85A3E;   /* Darker burnt orange */
+  
+  --color-success: #9CAF88;  /* Sage green */
 }
 
 * {
@@ -1142,6 +1147,40 @@ body {
 .form-note {
     font-size: 0.9rem;
     opacity: 0.9;
+}
+
+/* Newsletter Subscription Confirmation */
+.subscription-confirmed {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: var(--space-md);
+    padding: var(--space-md) 0;
+    color: var(--color-white);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-medium);
+}
+
+.subscription-confirmed .checkmark {
+    width: 28px;
+    height: 28px;
+    color: var(--color-white);
+    animation: checkmarkPop 0.5s ease-out;
+}
+
+@keyframes checkmarkPop {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 /* Social Proof Section */

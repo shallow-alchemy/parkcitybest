@@ -164,3 +164,90 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial update
     updateActiveTheme();
 });
+
+// Newsletter Subscription Handler
+document.addEventListener('DOMContentLoaded', function() {
+    const STORAGE_KEY = 'park-city-newsletter-subscribed';
+    const newsletterForm = document.querySelector('.newsletter-form');
+    
+    if (!newsletterForm) return;
+    
+    const formRow = newsletterForm.querySelector('.form-row');
+    const emailInput = newsletterForm.querySelector('input[name="email"]');
+    
+    // Check if user is already subscribed
+    function checkSubscriptionStatus() {
+        const isSubscribed = localStorage.getItem(STORAGE_KEY) === 'true';
+        if (isSubscribed) {
+            showSubscribedState();
+        }
+    }
+    
+    // Show subscribed confirmation state
+    function showSubscribedState() {
+        formRow.innerHTML = `
+            <div class="subscription-confirmed">
+                <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <span>You are subscribed!</span>
+            </div>
+        `;
+    }
+    
+    // Handle form submission
+    newsletterForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const email = emailInput.value;
+        const submitButton = newsletterForm.querySelector('button[type="submit"]');
+        
+        // Disable form while submitting
+        emailInput.disabled = true;
+        submitButton.disabled = true;
+        submitButton.textContent = 'Subscribing...';
+        
+        try {
+            // Submit to Netlify Forms
+            const response = await fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams({
+                    'form-name': 'newsletter',
+                    'email': email
+                }).toString()
+            });
+            
+            if (response.ok) {
+                // Save subscription status
+                localStorage.setItem(STORAGE_KEY, 'true');
+                
+                // Show success state
+                showSubscribedState();
+                
+                // Optional: Track event if analytics is set up
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'newsletter_signup', {
+                        'event_category': 'engagement',
+                        'event_label': 'newsletter'
+                    });
+                }
+            } else {
+                throw new Error('Subscription failed');
+            }
+        } catch (error) {
+            // Re-enable form on error
+            emailInput.disabled = false;
+            submitButton.disabled = false;
+            submitButton.textContent = 'Subscribe';
+            
+            // Show error message
+            alert('Sorry, there was an error subscribing. Please try again.');
+            console.error('Newsletter subscription error:', error);
+        }
+    });
+    
+    // Check subscription status on page load
+    checkSubscriptionStatus();
+});
