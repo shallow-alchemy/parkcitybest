@@ -1,6 +1,6 @@
 /* Design System Inlined for Better Compatibility */
 
-/* Default Theme - Mountain Luxury */
+/* Default Theme - Summer */
 :root {
   /* Primary Colors */
   --color-primary: #2D5016;        /* Deep forest green */
@@ -81,8 +81,8 @@
   --transition-slow: 0.5s ease-in-out;
 }
 
-/* Alpine Modern Theme Override */
-body.theme-alpine-modern {
+/* Winter Theme Override */
+body.theme-winter {
   --color-primary: #4A5D6C;        /* Slate blue-gray */
   --color-secondary: #FFFFFF;      /* Clean white */
   --color-accent: #D4A574;         /* Warm gold */
@@ -104,8 +104,8 @@ body.theme-alpine-modern {
   --color-hover-accent: #C19660;   /* Darker warm gold */
 }
 
-/* Utah Earth Theme Override */
-body.theme-utah-earth {
+/* Autumn Theme Override */
+body.theme-autumn {
   --color-primary: #9CAF88;        /* Sage green */
   --color-secondary: #E6D2AA;      /* Sandstone beige */
   --color-accent: #CC6B49;         /* Burnt orange */
