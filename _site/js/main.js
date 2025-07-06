@@ -174,6 +174,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const formRow = newsletterForm.querySelector('.form-row');
     const emailInput = newsletterForm.querySelector('input[name="email"]');
+    const submitButton = newsletterForm.querySelector('button[type="submit"]');
     
     // Check if user is already subscribed
     function checkSubscriptionStatus() {
@@ -196,12 +197,14 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
     }
     
-    // Handle form submission
-    newsletterForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        
-        const email = emailInput.value;
-        const submitButton = newsletterForm.querySelector('button[type="submit"]');
+    // Handle subscription
+    async function handleSubscription() {
+        // Make sure we have the current email value
+        const currentEmail = emailInput.value;
+        if (!currentEmail) {
+            emailInput.focus();
+            return;
+        }
         
         // Disable form while submitting
         emailInput.disabled = true;
@@ -209,20 +212,16 @@ document.addEventListener('DOMContentLoaded', function() {
         submitButton.textContent = 'Subscribing...';
         
         try {
-            // Get form data
-            const formData = new FormData(newsletterForm);
-            const params = new URLSearchParams();
-            
-            // Convert FormData to URLSearchParams
-            for (const pair of formData) {
-                params.append(pair[0], pair[1]);
-            }
+            // Build form data manually to ensure all fields are included
+            const formData = new URLSearchParams();
+            formData.append('form-name', 'newsletter');
+            formData.append('email', currentEmail);
             
             // Submit to Netlify Forms
             const response = await fetch('/', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: params.toString()
+                body: formData.toString()
             });
             
             if (response.ok) {
@@ -251,6 +250,29 @@ document.addEventListener('DOMContentLoaded', function() {
             // Show error message
             alert('Sorry, there was an error subscribing. Please try again.');
             console.error('Newsletter subscription error:', error);
+        }
+    }
+    
+    // Handle button click
+    if (submitButton) {
+        submitButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            handleSubscription();
+        });
+    }
+    
+    // Handle form submission (as backup)
+    newsletterForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        handleSubscription();
+        return false;
+    });
+    
+    // Handle Enter key in email input
+    emailInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            handleSubscription();
         }
     });
     
