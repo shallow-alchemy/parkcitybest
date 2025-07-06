@@ -209,14 +209,20 @@ document.addEventListener('DOMContentLoaded', function() {
         submitButton.textContent = 'Subscribing...';
         
         try {
+            // Get form data
+            const formData = new FormData(newsletterForm);
+            const params = new URLSearchParams();
+            
+            // Convert FormData to URLSearchParams
+            for (const pair of formData) {
+                params.append(pair[0], pair[1]);
+            }
+            
             // Submit to Netlify Forms
             const response = await fetch('/', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams({
-                    'form-name': 'newsletter',
-                    'email': email
-                }).toString()
+                body: params.toString()
             });
             
             if (response.ok) {
