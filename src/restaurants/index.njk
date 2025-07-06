@@ -6,7 +6,16 @@ layout: base.njk
 
 <section class="hero hero-with-image">
     <div class="hero-background">
-        <img src="{{ images.themes[images.currentTheme].defaultRestaurant }}" alt="{{ images.themes[images.currentTheme].restaurantAlt }}" class="hero-bg-image">
+        <img 
+            src="{{ images.themes.autumn.defaultRestaurant }}"
+            data-theme-summer="{{ images.themes.summer.defaultRestaurant }}"
+            data-theme-autumn="{{ images.themes.autumn.defaultRestaurant }}"
+            data-theme-winter="{{ images.themes.winter.defaultRestaurant }}"
+            data-alt-summer="{{ images.themes.summer.restaurantAlt }}"
+            data-alt-autumn="{{ images.themes.autumn.restaurantAlt }}"
+            data-alt-winter="{{ images.themes.winter.restaurantAlt }}"
+            alt="{{ images.themes.autumn.restaurantAlt }}" 
+            class="hero-bg-image theme-aware-image">
         <div class="hero-overlay"></div>
     </div>
     <div class="hero-content">

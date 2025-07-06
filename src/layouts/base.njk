@@ -21,6 +21,22 @@
     <meta property="twitter:image" content="https://parkcitybest.com/images/park-city-og.jpg">
     
     <link rel="canonical" href="https://parkcitybest.com{{ page.url }}">
+    
+    <!-- Prevent flash of wrong theme -->
+    <script>
+    (function() {
+      const STORAGE_KEY = 'park-city-theme-override';
+      function getCurrentSeason() {
+        const month = new Date().getMonth();
+        if (month >= 2 && month <= 7) return 'summer';
+        else if (month >= 8 && month <= 10) return 'autumn';
+        else return 'winter';
+      }
+      const theme = localStorage.getItem(STORAGE_KEY) || getCurrentSeason();
+      document.documentElement.className = 'theme-' + theme;
+    })();
+    </script>
+    
     <link rel="stylesheet" href="/css/main.css">
     
     <!-- Google tag (gtag.js) -->
@@ -44,7 +60,7 @@
     }
     </script>
 </head>
-<body class="theme-{{ images.currentTheme }}">
+<body>
     <header class="site-header">
         <nav class="main-nav">
             <div class="nav-container">
@@ -111,5 +127,6 @@
     </footer>
 
     <script src="/js/main.js" defer></script>
+    <script src="/js/theme-detector.js" defer></script>
 </body>
 </html>
