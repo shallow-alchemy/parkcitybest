@@ -163,6 +163,14 @@ body {
     font-weight: var(--font-weight-bold);
     color: var(--color-primary);
     text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+    display: block;
 }
 
 .nav-menu {
@@ -434,6 +442,18 @@ body {
     animation: fadeInUp 0.6s ease-out;
 }
 
+/* About Page Logo */
+.about-logo-container {
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+}
+
+.about-logo {
+    max-width: 250px;
+    height: auto;
+    display: inline-block;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .mobile-menu-toggle {
@@ -458,6 +478,10 @@ body {
         right: 0;
     }
     
+    .logo-img {
+        height: 32px;
+    }
+    
     .hero-with-image {
         min-height: 60vh;
         padding: 4rem 1rem;
@@ -477,6 +501,10 @@ body {
     
     .cards-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .about-logo {
+        max-width: 180px;
     }
 }
 
