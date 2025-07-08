@@ -78,7 +78,12 @@
       const newAlt = img.getAttribute(`data-alt-${theme}`);
       
       if (newSrc && img.src !== newSrc) {
+        // Add fade transition to prevent flash
+        img.style.opacity = '0';
         img.src = newSrc;
+        img.onload = () => {
+          img.style.opacity = '1';
+        };
       }
       
       if (newAlt) {

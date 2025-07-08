@@ -138,6 +138,29 @@ body.theme-autumn {
     box-sizing: border-box;
 }
 
+/* Skip Link for Accessibility */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    z-index: 9999;
+    color: var(--color-white);
+    background: var(--color-primary);
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 0 0 4px 4px;
+    font-weight: 600;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+    opacity: 1;
+    pointer-events: auto;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     line-height: var(--line-height-normal);
@@ -246,6 +269,10 @@ body {
     height: 100%;
     object-fit: cover;
     object-position: center;
+}
+
+.theme-aware-image {
+    transition: opacity 0.3s ease-in-out;
 }
 
 .hero-overlay {

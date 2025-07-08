@@ -34,10 +34,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     
-    <!-- Critical CSS inline -->
-    <style>
-    {% include "critical.css" %}
-    </style>
+    <!-- Preload critical images -->
+    <link rel="preload" href="/images/ParkCityBest_logo_horizontal.png" as="image">
+    {% if page.url == "/" %}
+    <link rel="preload" href="/images/parkcity_summer.jpg" as="image">
+    {% elif page.url == "/restaurants/" %}
+    <link rel="preload" href="/images/parkcity_nightlife.jpg" as="image">
+    {% endif %}
+    
+    <!-- Preload main CSS -->
+    <link rel="preload" href="/css/main.css" as="style">
+    <link rel="stylesheet" href="/css/main.css">
     
     <!-- Prevent flash of wrong theme -->
     <script>
@@ -54,9 +61,6 @@
     })();
     </script>
     
-    <!-- Preload main CSS -->
-    <link rel="preload" href="/css/main.css" as="style">
-    <link rel="stylesheet" href="/css/main.css">
     
     
     <!-- Structured Data -->
@@ -147,8 +151,11 @@
         </div>
     </footer>
 
-    <script src="/js/main.js" defer></script>
+    <!-- Preload JS and load with defer -->
+    <link rel="preload" href="/js/theme-detector.js" as="script">
+    <link rel="preload" href="/js/main.js" as="script">
     <script src="/js/theme-detector.js" defer></script>
+    <script src="/js/main.js" defer></script>
     
     <!-- Google Analytics - Load after page content -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0KTBM82T8M"></script>
