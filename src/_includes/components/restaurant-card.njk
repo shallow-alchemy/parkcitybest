@@ -4,15 +4,13 @@
          data-occasions="{{ restaurant.occasions | join(',') }}"
          data-location="{{ restaurant.location }}">
     <a href="/restaurants/{{ restaurant.name | slug }}/" class="card-link">
-        {% if restaurant.image %}
         <div class="card-image">
+            {% if restaurant.image %}
             <img src="{{ restaurant.image }}" alt="{{ restaurant.name }}" loading="lazy">
+            {% else %}
+            <img src="/images/restaurant-placeholder.svg" alt="{{ restaurant.name }}" loading="lazy" width="400" height="300">
+            {% endif %}
         </div>
-        {% else %}
-        <div class="card-image card-image-placeholder">
-            <img src="/images/restaurant-placeholder.svg" alt="{{ restaurant.name }}" loading="lazy">
-        </div>
-        {% endif %}
         
         <div class="card-content">
             <div class="card-header">

@@ -40,10 +40,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Lazy loading for images
     if ('loading' in HTMLImageElement.prototype) {
-        const images = document.querySelectorAll('img[loading="lazy"]');
-        images.forEach(img => {
-            img.src = img.dataset.src;
-        });
+        // Native lazy loading is supported, no need to do anything
+        // The browser will handle images with loading="lazy" attribute
     } else {
         // Fallback for browsers that don't support lazy loading
         const script = document.createElement('script');

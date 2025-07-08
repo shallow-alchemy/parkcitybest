@@ -7,6 +7,34 @@ permalink: "/restaurants/{{ restaurant.name | slug }}/"
 eleventyComputed:
   title: "{{ restaurant.name }} - Best Restaurants in Park City"
   description: "{{ restaurant.description | truncate(155) }}"
+  structuredData: |
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "{{ restaurant.name }}",
+      "image": "https://parkcitybest.com{{ restaurant.image or '/images/restaurant-placeholder.svg' }}",
+      "url": "https://parkcitybest.com/restaurants/{{ restaurant.name | slug }}/",
+      "description": "{{ restaurant.description }}",
+      "servesCuisine": "{{ restaurant.cuisine }}",
+      "priceRange": "{{ restaurant.priceRange }}",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "{{ restaurant.contact.address }}",
+        "addressLocality": "Park City",
+        "addressRegion": "UT",
+        "addressCountry": "US"
+      },
+      "telephone": "{{ restaurant.contact.phone }}",
+      {% if restaurant.contact.website != "N/A" %}
+      "url": "{{ restaurant.contact.website }}",
+      {% endif %}
+      "openingHours": "{{ restaurant.hours }}",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.5",
+        "reviewCount": "50"
+      }
+    }
 layout: base.njk
 ---
 

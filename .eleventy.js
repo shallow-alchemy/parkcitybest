@@ -1,4 +1,6 @@
 const htmlmin = require("html-minifier");
+const Image = require("@11ty/eleventy-img");
+const path = require("path");
 
 module.exports = function(eleventyConfig) {
   // Copy static files
@@ -22,6 +24,34 @@ module.exports = function(eleventyConfig) {
 
   // Add year shortcode for copyright
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
+
+  // Image optimization shortcode
+  eleventyConfig.addAsyncShortcode("image", async function(src, alt, sizes = "100vw") {
+    if(alt === undefined) {
+      throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`);
+    }
+
+    let metadata = await Image(src, {
+      widths: [300, 600, 900, 1200],
+      formats: ["webp", "jpeg"],
+      urlPath: "/images/",
+      outputDir: "./_site/images/",
+      filenameFormat: function (id, src, width, format, options) {
+        const extension = path.extname(src);
+        const name = path.basename(src, extension);
+        return `${name}-${width}w.${format}`;
+      }
+    });
+
+    let imageAttributes = {
+      alt,
+      sizes,
+      loading: "lazy",
+      decoding: "async",
+    };
+
+    return Image.generateHTML(metadata, imageAttributes);
+  });
 
   // Add custom collections for different page types
   eleventyConfig.addCollection("activities", function(collectionApi) {
