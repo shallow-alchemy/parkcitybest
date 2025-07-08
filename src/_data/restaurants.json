@@ -32,6 +32,7 @@
         "reservations-required"
       ],
       "description": "Park City's most distinguished fine dining restaurant, operating as a 16-year Forbes Four Star Award winner. Located on the second floor of a historic Main Street building with a famous patio overlooking the heart of downtown. Features live music nightly at 7pm and a perpetually rotating seasonal menu.",
+      "image": "/images/restaurants/riverhorse-on-main.jpg",
       "lastUpdated": "2025-07-05"
     },
     {
@@ -68,6 +69,7 @@
         "private-dining"
       ],
       "description": "Montage Deer Valley's signature restaurant that transforms into 'Apex Steak' each evening. Features unique Alpenglobes for 90-minute enclosed outdoor dining experiences with panoramic Deer Valley views. Executive Chef Kevin Hee brings progressive twists to traditional American steakhouse classics.",
+      "image": "/images/restaurants/apex-montage.jpg",
       "lastUpdated": "2025-07-05"
     },
     {
@@ -103,7 +105,8 @@
         "corkage-available"
       ],
       "description": "Named after Park City's sister city in the French Alps and housed in the historic Coal & Lumber building. Executive Chef Clement Gelas, who actually grew up in Courchevel, France, brings authentic French-European cuisine. CNN Travel named it one of the 'World's Best New Restaurants for 2020.'",
-      "lastUpdated": "2025-07-05"
+      "lastUpdated": "2025-07-05",
+      "image": "/images/restaurants/courchevel-bistro.jpg"
     },
     {
       "name": "The Mariposa",
@@ -139,7 +142,8 @@
         "vegan-options"
       ],
       "description": "Zagat's #1 rated restaurant in Utah, located at 8,100 feet elevation in Silver Lake Lodge. Offers an intimate tasting room dining experience with 6- and 8-course menus highlighting decadent ingredients and seasonal local products. Only operates during ski season, making reservations highly coveted.",
-      "lastUpdated": "2025-07-05"
+      "lastUpdated": "2025-07-05",
+      "image": "/images/restaurants/the-mariposa.jpg"
     },
     {
       "name": "The Eating Establishment",
@@ -160,7 +164,11 @@
         "BLTA",
         "Established Burger"
       ],
-      "occasions": ["family-breakfast", "family-dining", "casual-lunch"],
+      "occasions": [
+        "family-breakfast",
+        "family-dining",
+        "casual-lunch"
+      ],
       "features": [
         "breakfast-all-day",
         "kids-menu-with-photos",
@@ -171,7 +179,8 @@
         "large-portions"
       ],
       "description": "Park City's oldest full-service restaurant since 1972, serving three generations of families. Famous for 'breakfast all day' concept that kids especially love - you can order pancakes at dinner time! Features a kids menu with photos so little ones can pick what they want even if they can't read yet.",
-      "lastUpdated": "2025-07-05"
+      "lastUpdated": "2025-07-05",
+      "image": "/images/restaurants/the-eating-establishment.jpg"
     },
     {
       "name": "Silver Star Café",
@@ -192,7 +201,11 @@
         "Artisan Pizza (kids love)",
         "Wild Mushroom Tart"
       ],
-      "occasions": ["family-dining", "special-occasion", "mountain-dining"],
+      "occasions": [
+        "family-dining",
+        "special-occasion",
+        "mountain-dining"
+      ],
       "features": [
         "360-degree-mountain-views",
         "live-acoustic-music",
@@ -203,7 +216,8 @@
         "featured-on-food-network"
       ],
       "description": "Award-winning 'Hidden Gem' featured on Food Network's Diners, Drive-ins & Dives. True mom-and-pop operation where kids grew up in restaurants and now help run it. 360-degree mountain views with safe outdoor patio where little ones can wander while waiting for food. Live acoustic music Thu-Sat evenings.",
-      "lastUpdated": "2025-07-05"
+      "lastUpdated": "2025-07-05",
+      "image": "/images/restaurants/silver-star-caf.jpg"
     },
     {
       "name": "Grub Steak Restaurant",
@@ -224,7 +238,11 @@
         "Bison Tenderloin",
         "45-Item Salad Bar (included)"
       ],
-      "occasions": ["family-steakhouse", "special-occasion", "large-groups"],
+      "occasions": [
+        "family-steakhouse",
+        "special-occasion",
+        "large-groups"
+      ],
       "features": [
         "amazing-kids-menu",
         "45-item-salad-bar",
@@ -235,7 +253,8 @@
         "accommodates-large-groups"
       ],
       "description": "Park City's longest standing steakhouse since 1976. Famous for an amazing kids menu that includes salmon, steak, and baby back ribs - not just chicken fingers. The legendary 45-item salad bar is included with all dinners. Head chef Brian is the longest tenured chef in Utah, with live country music Thu-Sat.",
-      "lastUpdated": "2025-07-05"
+      "lastUpdated": "2025-07-05",
+      "image": "/images/restaurants/grub-steak-restaurant.jpg"
     },
     {
       "name": "Hearth & Hill",
@@ -256,7 +275,11 @@
         "Tuna Poke Bowl",
         "Build-Your-Own Old Fashioned"
       ],
-      "occasions": ["family-gathering", "contemporary-dining", "weekend-brunch"],
+      "occasions": [
+        "family-gathering",
+        "contemporary-dining",
+        "weekend-brunch"
+      ],
       "features": [
         "elevated-kids-menu",
         "family-restroom-changing-table",
@@ -267,7 +290,8 @@
         "global-inspired-menu"
       ],
       "description": "Family-owned 'gathering spot' since 2018 by father-son duo. Elevated kids menu includes kid-friendly steak and fish dishes, not just typical fare. Children under 2 get complimentary buttered noodles. Contemporary American cuisine with global flair, from Korean fried chicken to build-your-own Old Fashioned.",
-      "lastUpdated": "2025-07-05"
+      "lastUpdated": "2025-07-05",
+      "image": "/images/restaurants/hearth-hill.jpg"
     },
     {
       "name": "High West Saloon",
@@ -301,7 +325,8 @@
         "working-distillery"
       ],
       "description": "World's only ski-in distillery located at the bottom of Quittin' Time ski run. Historic 1870s saloon atmosphere with award-winning whiskeys and elevated pub fare. Walk-in only, expect waits during ski season.",
-      "lastUpdated": "2025-07-05"
+      "lastUpdated": "2025-07-05",
+      "image": "/images/restaurants/high-west-saloon.jpg"
     },
     {
       "name": "The Bridge Cafe & Grill",
@@ -335,7 +360,8 @@
         "town-lift-access"
       ],
       "description": "Brazilian-American fusion restaurant with ski-in/ski-out access at Town Lift base. Features sunny patio with slope views and all-day breakfast. $2 sliders and hot dogs every Sunday & Thursday.",
-      "lastUpdated": "2025-07-05"
+      "lastUpdated": "2025-07-05",
+      "image": "/images/restaurants/the-bridge-cafe-grill.jpg"
     },
     {
       "name": "Umbrella Bar",
@@ -369,7 +395,8 @@
         "glass-enclosure"
       ],
       "description": "360-degree views from glass enclosure with massive outdoor deck in center of Canyons Village. Walking distance from Red Pine Gondola in ski boots. Perfect communal après-ski atmosphere.",
-      "lastUpdated": "2025-07-05"
+      "lastUpdated": "2025-07-05",
+      "image": "/images/restaurants/umbrella-bar.jpg"
     },
     {
       "name": "Collie's Sports Bar & Grill",
@@ -403,7 +430,8 @@
         "sports-packages"
       ],
       "description": "Park City's only dedicated sports bar with 25+ TVs and all sports packages. Family owned & operated with dog-friendly patio. Sound dogs allow table-specific audio.",
-      "lastUpdated": "2025-07-05"
+      "lastUpdated": "2025-07-05",
+      "image": "/images/restaurants/collie-s-sports-bar-grill.jpg"
     },
     {
       "name": "Après Pendry",
@@ -436,7 +464,8 @@
         "european-atmosphere"
       ],
       "description": "Centrally located lobby lounge with European-inspired mountainside socializing atmosphere. Indoor/outdoor seating with roaring fireplace and live music events.",
-      "lastUpdated": "2025-07-05"
+      "lastUpdated": "2025-07-05",
+      "image": "/images/restaurants/apr-s-pendry.jpg"
     },
     {
       "name": "RIME Oyster Bar",
@@ -469,7 +498,8 @@
         "limited-seating"
       ],
       "description": "World's only slopeside raw bar located in refurbished cabin at top of Deer Valley's Jordanelle Gondola. Prime time is 2-3pm for $2.50 oyster happy hour.",
-      "lastUpdated": "2025-07-05"
+      "lastUpdated": "2025-07-05",
+      "image": "/images/restaurants/rime-oyster-bar.jpg"
     },
     {
       "name": "Five5eeds",
@@ -503,7 +533,8 @@
         "kids-menu"
       ],
       "description": "Australian-owned breakfast spot importing coffee from Melbourne. Famous for hotcakes with edible flowers and mascarpone. Expect long waits on weekends (1+ hours) but worth it. Waitlist system only.",
-      "lastUpdated": "2025-07-05"
+      "lastUpdated": "2025-07-05",
+      "image": "/images/restaurants/five5eeds.jpg"
     },
     {
       "name": "Harvest",
@@ -538,42 +569,8 @@
         "town-lift-proximity"
       ],
       "description": "Australian-style cafe with partnership with local Idle Hands Roasting Co. Locally-sourced ingredients with many gluten-free/vegan options. Perfect pre-ski location near Town Lift Plaza.",
-      "lastUpdated": "2025-07-05"
-    },
-    {
-      "name": "The Eating Establishment",
-      "cuisine": "American Diner",
-      "priceRange": "$$",
-      "location": "Main Street",
-      "contact": {
-        "phone": "435-649-8284",
-        "website": "N/A",
-        "address": "317 Main Street, Park City, UT 84060"
-      },
-      "hours": "Daily 8am-3:59am (Closed 4-5pm daily)",
-      "specialties": [
-        "3-Egg Omelette (choice of 3 ingredients)",
-        "Huevos Rancheros",
-        "Eggs Benedict",
-        "Chicken Fried Steak",
-        "L.E.O. (Lox, Eggs, Onions)"
-      ],
-      "occasions": [
-        "breakfast",
-        "brunch",
-        "casual-dining",
-        "late-night"
-      ],
-      "features": [
-        "oldest-restaurant-park-city",
-        "all-day-breakfast",
-        "historic-building",
-        "wood-burning-fireplace",
-        "bar-area",
-        "souvenir-shop"
-      ],
-      "description": "Oldest full-service restaurant in Park City (since 1972) serving breakfast all day. Historic Main Street location with wood-burning fireplace. Local residents describe as 'excellent value with large portions.'",
-      "lastUpdated": "2025-07-05"
+      "lastUpdated": "2025-07-05",
+      "image": "/images/restaurants/harvest.jpg"
     },
     {
       "name": "Silver Summit Cafe",
@@ -606,7 +603,8 @@
         "cash-tips-preferred"
       ],
       "description": "Local's secret spot located in 7-Eleven gas station with surprisingly good food. Most reasonable prices in Park City. Outdoor patio overlooking golf course. Don't be put off by location.",
-      "lastUpdated": "2025-07-05"
+      "lastUpdated": "2025-07-05",
+      "image": "/images/restaurants/silver-summit-cafe.jpg"
     },
     {
       "name": "Atticus Coffee & Teahouse",
@@ -639,7 +637,8 @@
         "funky-ambiance"
       ],
       "description": "Part cafe, part bookstore with sliding library ladders and eco-conscious practices. Great terrace for watching Town Lift with funky ambiance and unique drink selections.",
-      "lastUpdated": "2025-07-05"
+      "lastUpdated": "2025-07-05",
+      "image": "/images/restaurants/atticus-coffee-teahouse.jpg"
     },
     {
       "name": "Park City Bread & Bagel",
@@ -672,7 +671,8 @@
         "mini-muffins"
       ],
       "description": "Hand-rolled bagels made fresh with quick service perfect for pre-ski breakfast on Wasatch side. Watch latest ski/snowboard films while eating. Mini muffins offered with sandwiches.",
-      "lastUpdated": "2025-07-05"
+      "lastUpdated": "2025-07-05",
+      "image": "/images/restaurants/park-city-bread-bagel.jpg"
     }
   ]
 }

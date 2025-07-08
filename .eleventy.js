@@ -28,6 +28,27 @@ module.exports = function(eleventyConfig) {
     return collectionApi.getFilteredByGlob("src/pages/activities/*.md");
   });
 
+  // Add slug filter for creating URL-safe names
+  eleventyConfig.addFilter("slug", function(input) {
+    if (!input) return "";
+    return input
+      .toString()
+      .toLowerCase()
+      .trim()
+      .replace(/\s+/g, "-") // Replace spaces with -
+      .replace(/[^\w\-]+/g, "") // Remove all non-word chars
+      .replace(/\-\-+/g, "-") // Replace multiple - with single -
+      .replace(/^-+/, "") // Trim - from start of text
+      .replace(/-+$/, ""); // Trim - from end of text
+  });
+
+  // Add truncate filter
+  eleventyConfig.addFilter("truncate", function(str, limit) {
+    if (!str) return "";
+    if (str.length <= limit) return str;
+    return str.slice(0, limit) + "...";
+  });
+
   return {
     dir: {
       input: "src",

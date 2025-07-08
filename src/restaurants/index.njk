@@ -93,72 +93,7 @@ layout: base.njk
 <section class="restaurants-grid container">
     <div class="grid" id="restaurants-container">
         {% for restaurant in restaurants.restaurants %}
-        <article class="restaurant-card" 
-                 data-price="{{ restaurant.priceRange }}"
-                 data-cuisine="{{ restaurant.cuisine }}"
-                 data-occasions="{{ restaurant.occasions | join(',') }}"
-                 data-location="{{ restaurant.location }}">
-            <div class="card-header">
-                <h3>{{ restaurant.name }}</h3>
-                <span class="price-indicator">{{ restaurant.priceRange }}</span>
-            </div>
-            
-            <div class="card-tags">
-                <span class="cuisine-tag">{{ restaurant.cuisine }}</span>
-                <span class="location-tag">{{ restaurant.location }}</span>
-            </div>
-            
-            <div class="card-body">
-                <p class="description">{{ restaurant.description }}</p>
-                
-                <div class="specialties">
-                    <strong>Must Try:</strong>
-                    <ul>
-                        {% for specialty in restaurant.specialties %}
-                        <li>{{ specialty }}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                
-                <div class="practical-info">
-                    <div class="info-item">
-                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <polyline points="12 6 12 12 16 14"></polyline>
-                        </svg>
-                        <span>{{ restaurant.hours }}</span>
-                    </div>
-                    
-                    <div class="info-item">
-                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                        </svg>
-                        <a href="tel:{{ restaurant.contact.phone }}">{{ restaurant.contact.phone }}</a>
-                    </div>
-                    
-                    <div class="info-item">
-                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                            <circle cx="12" cy="10" r="3"></circle>
-                        </svg>
-                        <span>{{ restaurant.contact.address }}</span>
-                    </div>
-                </div>
-                
-                <div class="card-features">
-                    {% for feature in restaurant.features %}
-                    <span class="feature-tag">{{ feature | replace("-", " ") | title }}</span>
-                    {% endfor %}
-                </div>
-                
-                <div class="card-footer">
-                    {% if restaurant.contact.website %}
-                    <a href="{{ restaurant.contact.website }}" target="_blank" rel="noopener" class="btn-website">Visit Website</a>
-                    {% endif %}
-                    <span class="last-updated">Updated: {{ restaurant.lastUpdated }}</span>
-                </div>
-            </div>
-        </article>
+        {% include "components/restaurant-card.njk" %}
         {% endfor %}
     </div>
     

@@ -1,13 +1,39 @@
 # CLAUDE.md
-
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Project Overview
+## Project Context
+Reference the following documentation files for complete project understanding:
 
-This is a static website for a Park City, Utah travel guide built with Eleventy (11ty) v2.0.1. The site uses Nunjucks templating, vanilla CSS, and vanilla JavaScript.
+- `docs/PROJECT_OVERVIEW.md` - Mission, strategy, revenue model, and content pillars
+- `docs/ENGINEERING_GUIDELINES.md` - 11ty architecture, component patterns, and performance standards  
+- `docs/CONTENT_STANDARDS.md` - Research process, content structure, and quality requirements
+- `docs/DEVELOPMENT_WORKFLOW.md` - Git workflow, deployment, and content update procedures
+
+## Key Requirements from Strategy
+- Superior organization and user experience vs competitors
+- Complete practical information for each restaurant/activity
+- Mobile-first design with visual elements
+- 15-20 curated listings vs competitor's 60-100
+- Focus on content gaps: seasonal, budget, dietary options
+- 2,000+ words per major page with 8-12 images
+- Local authority signals and insider knowledge
+
+## Technical Standards
+- 11ty static site generation for SEO performance
+- Component-driven architecture using Nunjucks templates
+- Lighthouse score 90+ across all metrics
+- Structured data implementation for local SEO
+- JSON-driven content management in `_data/` directory
+- Mobile-first CSS with CSS Grid/Flexbox
+
+## Development Priorities
+1. **Performance First**: Optimize for Core Web Vitals
+2. **SEO Foundation**: Semantic HTML, meta data, structured data
+3. **Scalable Components**: Reusable across content types
+4. **Content Strategy**: Follow research guardrails for authenticity
+5. **Local Authority**: Include practical details (parking, hours, insider tips)
 
 ## Essential Commands
-
 ```bash
 # Start development server with live reload
 npm start
@@ -20,13 +46,6 @@ npm run clean
 ```
 
 ## Architecture & Structure
-
-### Core Technologies
-- **Static Site Generator**: Eleventy 2.0.1
-- **Templating**: Nunjucks (.njk files)
-- **Styling**: Vanilla CSS (no preprocessors or frameworks)
-- **JavaScript**: Vanilla JS (no frameworks)
-- **Deployment**: Netlify
 
 ### Directory Structure
 - `src/` - All source files
@@ -46,15 +65,4 @@ Each page follows the pattern `src/[page-name]/index.njk` and includes:
 - Content wrapped in the base layout
 - Consistent structure for SEO and navigation
 
-### Key Implementation Details
-1. **SEO**: Base template includes comprehensive meta tags, Open Graph tags, and structured data (JSON-LD)
-2. **Performance**: HTML minification in production, static asset passthrough, proper caching headers
-3. **Security**: Headers configured in netlify.toml (X-Frame-Options, X-XSS-Protection, etc.)
-4. **Responsive Design**: CSS Grid and Flexbox for layout, mobile-first approach
-
-### Development Considerations
-- No build step for CSS/JS - files are used directly
-- Images should be optimized before adding to `src/images/`
-- All pages inherit from `src/layouts/base.njk`
-- Navigation is managed in the base template
-- Each page requires title and description in front matter
+Build all features following the technical requirements and content standards outlined in the docs/ folder.

@@ -1,0 +1,45 @@
+<article class="restaurant-card" 
+         data-price="{{ restaurant.priceRange }}"
+         data-cuisine="{{ restaurant.cuisine }}"
+         data-occasions="{{ restaurant.occasions | join(',') }}"
+         data-location="{{ restaurant.location }}">
+    <a href="/restaurants/{{ restaurant.name | slug }}/" class="card-link">
+        {% if restaurant.image %}
+        <div class="card-image">
+            <img src="{{ restaurant.image }}" alt="{{ restaurant.name }}" loading="lazy">
+        </div>
+        {% else %}
+        <div class="card-image card-image-placeholder">
+            <img src="/images/restaurant-placeholder.svg" alt="{{ restaurant.name }}" loading="lazy">
+        </div>
+        {% endif %}
+        
+        <div class="card-content">
+            <div class="card-header">
+                <h3>{{ restaurant.name }}</h3>
+                <span class="price-indicator">{{ restaurant.priceRange }}</span>
+            </div>
+            
+            <div class="card-tags">
+                <span class="cuisine-tag">{{ restaurant.cuisine }}</span>
+                <span class="location-tag">{{ restaurant.location }}</span>
+            </div>
+            
+            <p class="description">{{ restaurant.description | truncate(150) }}</p>
+            
+            <div class="card-features">
+                {% for feature in restaurant.features | slice(0, 3) %}
+                <span class="feature-tag">{{ feature | replace("-", " ") | title }}</span>
+                {% endfor %}
+                {% if restaurant.features.length > 3 %}
+                <span class="feature-tag">+{{ restaurant.features.length - 3 }} more</span>
+                {% endif %}
+            </div>
+        </div>
+    </a>
+    
+    <div class="card-footer">
+        <span class="view-details">View Details →</span>
+        <span class="last-updated">Updated: {{ restaurant.lastUpdated }}</span>
+    </div>
+</article>
