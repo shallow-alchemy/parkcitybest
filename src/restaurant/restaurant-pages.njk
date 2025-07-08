@@ -42,7 +42,7 @@ layout: base.njk
     <section class="restaurant-hero">
         {% if restaurant.image %}
         <div class="hero-image">
-            {% set heroImage = restaurant.image | replace("/images/stock/", "/images/stock/hero_") %}
+            {% set heroImage = restaurant.image | replace("/images/stock/", "/images/stock/2hero-") %}
             <img src="{{ heroImage }}" alt="{{ restaurant.name }}">
         </div>
         {% endif %}
