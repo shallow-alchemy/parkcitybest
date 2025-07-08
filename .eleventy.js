@@ -1,4 +1,5 @@
 const htmlmin = require("html-minifier");
+const CleanCSS = require("clean-css");
 const Image = require("@11ty/eleventy-img");
 const path = require("path");
 
@@ -15,11 +16,18 @@ module.exports = function(eleventyConfig) {
       let minified = htmlmin.minify(content, {
         useShortDoctype: true,
         removeComments: true,
-        collapseWhitespace: true
+        collapseWhitespace: true,
+        minifyCSS: true,
+        minifyJS: true
       });
       return minified;
     }
     return content;
+  });
+
+  // Add CSS minification filter
+  eleventyConfig.addFilter("cssmin", function(code) {
+    return new CleanCSS({}).minify(code).styles;
   });
 
   // Add year shortcode for copyright

@@ -9,7 +9,10 @@ const STATIC_CACHE_URLS = [
   '/js/main.js',
   '/js/theme-detector.js',
   '/images/ParkCityBest_logo_horizontal.png',
-  '/images/restaurant-placeholder.svg'
+  '/images/restaurant-placeholder.svg',
+  '/images/parkcity_summer.jpg',
+  '/images/parkcity_nightlife.jpg',
+  '/manifest.json'
 ];
 
 // Install event - cache static resources

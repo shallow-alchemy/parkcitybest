@@ -1,362 +1,217 @@
-# Park City Best - Lighthouse Performance Optimization
+# Claude Code Performance Optimization Instructions
 
-## Current Issues Analysis
-Based on your site's content and typical 11ty performance patterns, here are the most likely optimization opportunities:
+## Project Context
+Reference the docs/ folder for complete project understanding and follow the technical standards outlined in ENGINEERING_GUIDELINES.md.
 
-## 🚀 Performance Optimizations
+## Current Performance Issues
+The Park City Best website needs critical performance optimizations to achieve Lighthouse scores of 90+. The site is functionally complete but lacks key performance implementations that are causing poor Core Web Vitals.
 
-### 1. Image Optimization (Biggest Impact)
-**Current Issue**: Likely using large, unoptimized images
-**Solutions**:
-```javascript
-// .eleventy.js - Add image optimization plugin
-const Image = require("@11ty/eleventy-img");
+## Task Priority Order
+Complete these tasks in order, testing Lighthouse scores after each implementation:
 
-async function imageShortcode(src, alt, sizes) {
-  let metadata = await Image(src, {
-    widths: [300, 600, 900, 1200],
-    formats: ["webp", "jpeg"],
-    outputDir: "./dist/img/",
-    urlPath: "/img/"
-  });
+---
 
-  let imageAttributes = {
-    alt,
-    sizes,
-    loading: "lazy",
-    decoding: "async",
-  };
+## Task 1: Image Optimization System
+**Priority: CRITICAL (Biggest performance impact)**
 
-  return Image.generateHTML(metadata, imageAttributes);
-}
-
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addAsyncShortcode("image", imageShortcode);
-};
+### Install and Configure 11ty Image Plugin
+```bash
+npm install @11ty/eleventy-img --save-dev
 ```
 
-**Template Usage**:
-```njk
-{% image "./src/images/restaurant-hero.jpg", "Riverhorse Restaurant exterior", "(min-width: 30em) 50vw, 100vw" %}
-```
+### Implementation Requirements:
+1. **Add to .eleventy.js configuration:**
+   - Install eleventy-img plugin
+   - Create async image shortcode that generates:
+     - Multiple sizes: [300, 600, 900, 1200] widths
+     - Multiple formats: ["webp", "jpeg"] 
+     - Lazy loading: `loading="lazy"`
+     - Output directory: `./dist/img/`
+     - URL path: `/img/`
 
-### 2. Critical CSS Implementation
-**Create**: `src/_includes/critical.css`
-```css
-/* Inline critical styles for above-the-fold content */
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-}
+2. **Create image shortcode usage:**
+   ```njk
+   {% image "./src/images/hero-bg.jpg", "Park City mountain view", "(min-width: 30em) 50vw, 100vw" %}
+   ```
 
-.hero {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  text-align: center;
-  padding: 4rem 1rem;
-  min-height: 60vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+3. **Convert existing images:**
+   - Update all `<img>` tags to use the new shortcode
+   - Ensure hero images load with priority (no lazy loading)
+   - Add proper alt text and sizes attributes
 
-.hero h1 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  margin: 0 0 1rem 0;
-  font-weight: 700;
-}
+### Expected Result:
+- All images serve in WebP format with JPEG fallback
+- Responsive images for different screen sizes
+- Lazy loading for below-the-fold content
+- 20-30 point Lighthouse performance improvement
 
-.nav {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-```
+---
 
-**In base.njk**:
-```njk
-<head>
-  <style>
-    {% include "critical.css" %}
-  </style>
-  <link rel="preload" href="/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
-</head>
-```
+## Task 2: Critical CSS Implementation
+**Priority: HIGH (Fixes render blocking)**
 
-### 3. Font Optimization
-```njk
-<!-- In head.njk -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-</noscript>
-```
+### Create Critical CSS System:
+1. **Create `src/_includes/critical.css` with above-the-fold styles:**
+   - Body, typography, and layout fundamentals
+   - Hero section styles (complete styling for first screen)
+   - Navigation styles
+   - Any CSS needed for content visible without scrolling
 
-### 4. JavaScript Optimization
-**Defer non-critical JS**:
-```njk
-<!-- At bottom of body -->
-<script src="/js/main.js" defer></script>
-<script>
-  // Inline critical JS only
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js');
-  }
-</script>
-```
+2. **Modify base layout template:**
+   - Inline critical CSS in `<head>` using: `{% include "critical.css" %}`
+   - Load remaining CSS asynchronously:
+     ```html
+     <link rel="preload" href="/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+     <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
+     ```
 
-### 5. Resource Preloading
-```njk
-<!-- In head.njk -->
-<link rel="dns-prefetch" href="//fonts.googleapis.com">
-<link rel="preload" href="/fonts/main.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/images/hero-bg.webp" as="image">
-```
+3. **Move non-critical CSS:**
+   - Extract all below-the-fold styles to separate file
+   - Keep critical CSS under 14KB for optimal performance
 
-## 🎯 Accessibility Improvements
+### Expected Result:
+- Eliminates render-blocking CSS
+- Faster First Contentful Paint (FCP)
+- Improved Largest Contentful Paint (LCP)
+- 10-15 point Lighthouse improvement
 
-### 1. Semantic HTML Structure
-```njk
-<!-- Current improvement needed -->
-<header role="banner">
-  <nav role="navigation" aria-label="Main navigation">
-    <ul>
-      <li><a href="/restaurants/" aria-current="page">Restaurants</a></li>
-      <li><a href="/activities/">Activities</a></li>
-    </ul>
-  </nav>
-</header>
+---
 
-<main role="main">
-  <section aria-labelledby="hero-heading">
-    <h1 id="hero-heading">Your Local Guide to Park City's Best</h1>
-  </section>
-</main>
-```
+## Task 3: Font Optimization
+**Priority: MEDIUM (Reduces layout shift)**
 
-### 2. Focus Management
-```css
-/* Visible focus indicators */
-a:focus,
-button:focus {
-  outline: 3px solid #4A90E2;
-  outline-offset: 2px;
-}
+### Implement Font Loading Strategy:
+1. **Add to `<head>` section:**
+   ```html
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+   <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
+   ```
 
-/* Skip links */
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 6px;
-  background: #000;
-  color: #fff;
-  padding: 8px;
-  text-decoration: none;
-  z-index: 1000;
-}
+2. **Add font-display CSS:**
+   ```css
+   font-display: swap;
+   ```
 
-.skip-link:focus {
-  top: 6px;
-}
-```
+3. **Define fallback fonts:**
+   ```css
+   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+   ```
 
-### 3. Color Contrast Improvements
-```css
-/* Ensure 4.5:1 contrast ratio minimum */
-.text-muted {
-  color: #545454; /* Instead of light gray */
-}
+### Expected Result:
+- Faster font loading
+- Reduced Cumulative Layout Shift (CLS)
+- Better perceived performance
 
-.btn-primary {
-  background: #1a365d; /* Darker blue for better contrast */
-  color: #ffffff;
-}
-```
+---
 
-## 🔍 SEO Optimizations
+## Task 4: Resource Preloading
+**Priority: MEDIUM (Improves loading priority)**
 
-### 1. Enhanced Meta Tags
-```njk
-<!-- In head.njk -->
-<title>{{ title }} | Park City Best - Local Restaurant & Activity Guide</title>
-<meta name="description" content="{{ description or 'Your local guide to Park City\'s best restaurants, activities, and experiences. Skip the tourist traps with our resident-verified recommendations.' }}">
+### Add Strategic Preloading:
+1. **Preload critical resources in `<head>`:**
+   ```html
+   <link rel="dns-prefetch" href="//fonts.googleapis.com">
+   <link rel="preload" href="/images/hero-bg.webp" as="image">
+   <link rel="preload" href="/css/main.css" as="style">
+   ```
 
-<!-- Open Graph -->
-<meta property="og:title" content="{{ title }} | Park City Best">
-<meta property="og:description" content="{{ description or site.description }}">
-<meta property="og:image" content="{{ image or '/images/og-default.jpg' }}">
-<meta property="og:url" content="{{ site.url }}{{ page.url }}">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Park City Best">
+2. **Optimize resource loading order:**
+   - Critical images: preload
+   - Hero background: preload
+   - Below-fold images: lazy load
 
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{{ title }} | Park City Best">
-<meta name="twitter:description" content="{{ description or site.description }}">
-<meta name="twitter:image" content="{{ image or '/images/twitter-default.jpg' }}">
+### Expected Result:
+- Faster loading of critical resources
+- Better resource prioritization
+- Improved perceived performance
 
-<!-- Local Business Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Park City Best",
-  "url": "{{ site.url }}",
-  "description": "Local guide to Park City's best restaurants and activities",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "{{ site.url }}/search?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
-}
-</script>
-```
+---
 
-### 2. Structured Data for Restaurants
-```njk
-<!-- In restaurant-card.njk -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Restaurant",
-  "name": "{{ restaurant.name }}",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "{{ restaurant.streetAddress }}",
-    "addressLocality": "Park City",
-    "addressRegion": "UT",
-    "postalCode": "{{ restaurant.postalCode }}"
-  },
-  "telephone": "{{ restaurant.phone }}",
-  "priceRange": "{{ restaurant.priceRange }}",
-  "servesCuisine": "{{ restaurant.cuisine }}",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "{{ restaurant.rating }}",
-    "bestRating": "5"
-  }
-}
-</script>
-```
+## Task 5: HTML/CSS Minification
+**Priority: LOW (Small but measurable improvement)**
 
-## 🔧 Build Optimizations
+### Add Build Optimizations:
+1. **Install minification packages:**
+   ```bash
+   npm install html-minifier clean-css --save-dev
+   ```
 
-### 1. HTML Minification
-```javascript
-// .eleventy.js
-const htmlmin = require("html-minifier");
+2. **Add to .eleventy.js:**
+   - HTML minification transform
+   - CSS minification filter
+   - Remove comments and whitespace in production
 
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
-    if( outputPath && outputPath.endsWith(".html") ) {
-      let minified = htmlmin.minify(content, {
-        useShortDoctype: true,
-        removeComments: true,
-        collapseWhitespace: true
-      });
-      return minified;
-    }
-    return content;
-  });
-};
-```
+3. **Configure minification options:**
+   - Remove comments
+   - Collapse whitespace
+   - Minify CSS/JS in HTML
 
-### 2. CSS Optimization
-```javascript
-// Install: npm install clean-css
-const CleanCSS = require("clean-css");
+### Expected Result:
+- Smaller file sizes
+- Faster download times
+- Minor performance improvement
 
-eleventyConfig.addFilter("cssmin", function(code) {
-  return new CleanCSS({}).minify(code).styles;
-});
-```
+---
 
-### 3. Service Worker for Caching
-**Create**: `src/sw.js`
-```javascript
-const CACHE_NAME = 'park-city-best-v1';
-const urlsToCache = [
-  '/',
-  '/restaurants/',
-  '/css/main.css',
-  '/js/main.js',
-  '/images/logo.svg'
-];
+## Task 6: Service Worker Implementation
+**Priority: LOW (Advanced optimization)**
 
-self.addEventListener('install', event => {
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(urlsToCache))
-  );
-});
+### Add Caching Strategy:
+1. **Create `src/sw.js`:**
+   - Cache critical resources
+   - Implement cache-first strategy for images
+   - Network-first strategy for HTML
 
-self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request)
-      .then(response => response || fetch(event.request))
-  );
-});
-```
+2. **Register service worker:**
+   ```javascript
+   if ('serviceWorker' in navigator) {
+     navigator.serviceWorker.register('/sw.js');
+   }
+   ```
 
-## 📊 Performance Monitoring
+### Expected Result:
+- Faster repeat visits
+- Offline capability
+- Better user experience
 
-### 1. Core Web Vitals Tracking
-```javascript
-// Add to main.js
-function trackWebVitals() {
-  import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
-    getCLS(console.log);
-    getFID(console.log);
-    getFCP(console.log);
-    getLCP(console.log);
-    getTTFB(console.log);
-  });
-}
+---
 
-if (typeof window !== 'undefined') {
-  trackWebVitals();
-}
-```
+## Testing Instructions
 
-### 2. Lighthouse CI Setup
-**Create**: `.github/workflows/lighthouse.yml`
-```yaml
-name: Lighthouse CI
-on: [push]
-jobs:
-  lighthouse:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
-      - run: npm ci && npm run build
-      - run: npm install -g @lhci/cli@0.12.x
-      - run: lhci autorun
-```
+### After Each Task:
+1. **Run local build:** `npm run build`
+2. **Test locally:** `npm run serve`
+3. **Check Lighthouse score** using Chrome DevTools or PageSpeed Insights
+4. **Verify no broken functionality**
 
-## 🎯 Quick Wins Implementation Order
+### Target Scores:
+- **After Task 1 (Images):** 60-70 performance score
+- **After Task 2 (Critical CSS):** 75-85 performance score  
+- **After Task 3 (Fonts):** 80-90 performance score
+- **After Tasks 4-6:** 90+ performance score
 
-1. **Image Optimization** (Biggest performance impact)
-2. **Critical CSS** (Improves LCP significantly)
-3. **Font Optimization** (Reduces CLS)
-4. **Meta Tags & Schema** (SEO boost)
-5. **Accessibility Improvements** (Score improvement)
-6. **Service Worker** (PWA capabilities)
+### Troubleshooting:
+- If images don't generate: Check file paths and permissions
+- If CSS doesn't inline: Verify include path and file exists
+- If fonts don't load: Check preconnect and preload syntax
+- If builds fail: Check console errors and npm dependencies
 
-## 📈 Expected Lighthouse Score Improvements
+## Success Criteria
+- ✅ Lighthouse Performance Score: 90+
+- ✅ All Core Web Vitals in "Good" range
+- ✅ Images load in WebP format with lazy loading
+- ✅ Critical CSS inlined, non-critical CSS async
+- ✅ Fonts load without layout shift
+- ✅ No broken functionality or design issues
 
-- **Performance**: 65 → 90+ (with image optimization)
-- **Accessibility**: 75 → 95+ (with semantic HTML/contrast fixes)
-- **Best Practices**: 80 → 95+ (with HTTPS, no console errors)
-- **SEO**: 85 → 100 (with meta tags, structured data)
+## Files That Will Be Modified:
+- `.eleventy.js` (main configuration)
+- `src/_includes/layouts/base.njk` (main template)
+- `src/_includes/critical.css` (new file)
+- `src/sw.js` (new file)
+- Template files using images (convert to shortcodes)
+- `package.json` (new dependencies)
 
-Implement these optimizations in order of impact for maximum improvement to your Lighthouse scores!
+Implement these optimizations systematically to achieve the target 90+ Lighthouse performance score while maintaining all current functionality and design.

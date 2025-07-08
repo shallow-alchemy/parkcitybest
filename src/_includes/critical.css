@@ -1,0 +1,346 @@
+/* Critical CSS - Above the fold styles */
+/* This CSS is inlined in the head for faster rendering */
+
+/* CSS Variables and Reset */
+:root {
+  --color-primary: #2D5016;
+  --color-secondary: #F8F6F0;
+  --color-accent: #B85450;
+  --color-supporting: #36454F;
+  --color-text-primary: #2D5016;
+  --color-text-secondary: #36454F;
+  --color-text-on-primary: #F8F6F0;
+  --color-text-muted: #7A8B72;
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #F8F6F0;
+  --color-bg-light: #FDFCF8;
+  --color-hover-primary: #1F3A0F;
+  --color-white: #FFFFFF;
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+  --font-size-4xl: 2.5rem;
+  --font-size-5xl: 3rem;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --line-height-normal: 1.5;
+  --line-height-tight: 1.25;
+  --container-max: 1200px;
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --transition-normal: 0.3s ease-in-out;
+}
+
+/* Winter Theme Override */
+body.theme-winter {
+  --color-primary: #4A5D6C;
+  --color-secondary: #FFFFFF;
+  --color-accent: #D4A574;
+  --color-supporting: #1E2A3A;
+  --color-text-primary: #1E2A3A;
+  --color-text-secondary: #4A5D6C;
+  --color-text-on-primary: #FFFFFF;
+  --color-text-muted: #8B9AAB;
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #F8F9FA;
+  --color-bg-light: #FAFBFC;
+  --color-hover-primary: #3A4A57;
+}
+
+/* Autumn Theme Override */
+body.theme-autumn {
+  --color-primary: #9CAF88;
+  --color-secondary: #E6D2AA;
+  --color-accent: #CC6B49;
+  --color-supporting: #3E2723;
+  --color-text-primary: #3E2723;
+  --color-text-secondary: #5D4E37;
+  --color-text-on-primary: #FFFFFF;
+  --color-text-muted: #8A7F6B;
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #E6D2AA;
+  --color-bg-light: #F5F0E8;
+  --color-hover-primary: #8A9B76;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: var(--line-height-normal);
+  color: var(--color-text-secondary);
+  background-color: var(--color-bg-primary);
+}
+
+/* Skip Link for Accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  z-index: 9999;
+  color: var(--color-white);
+  background: var(--color-primary);
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 0 0 4px 4px;
+  font-weight: 600;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Header & Navigation - Above the fold */
+.site-header {
+  background: var(--color-bg-primary);
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--space-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+  transition: color var(--transition-normal);
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  color: var(--color-primary);
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.mobile-menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: var(--color-text-secondary);
+  transition: var(--transition-normal);
+}
+
+/* Hero Sections - Above the fold */
+.hero {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-supporting));
+  color: var(--color-text-on-primary);
+  padding: var(--space-3xl) var(--space-md);
+  text-align: center;
+}
+
+.hero-with-image {
+  position: relative;
+  padding: calc(var(--space-3xl) * 1.5) var(--space-md);
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, 
+      color-mix(in srgb, var(--color-primary) 60%, transparent),
+      color-mix(in srgb, var(--color-supporting) 60%, transparent));
+  z-index: 2;
+}
+
+.hero-with-image .hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: var(--font-size-5xl);
+  margin-bottom: var(--space-md);
+  animation: fadeInUp 0.8s ease-out;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  color: var(--color-text-on-primary);
+}
+
+.hero p {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-xl);
+  animation: fadeInUp 0.8s ease-out 0.2s;
+  animation-fill-mode: both;
+  color: var(--color-text-on-primary);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Button styles - Critical for hero CTAs */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  background: var(--color-primary);
+  color: var(--color-white);
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: var(--color-hover-primary);
+}
+
+.btn-secondary {
+  background: var(--color-accent);
+}
+
+.btn-large {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-tagline {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+/* Mobile styles for critical elements */
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: flex;
+  }
+  
+  .nav-menu {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: var(--color-white);
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1rem;
+    transition: right 0.3s;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .nav-menu.active {
+    right: 0;
+  }
+  
+  .logo-img {
+    height: 32px;
+  }
+  
+  .hero-with-image {
+    min-height: 60vh;
+    padding: 4rem 1rem;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+  
+  .hero-tagline {
+    font-size: 1.2rem;
+  }
+}

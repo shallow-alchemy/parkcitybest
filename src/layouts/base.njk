@@ -34,6 +34,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     
+    <!-- Optimize font loading -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
+    
     <!-- Preload critical images -->
     <link rel="preload" href="/images/ParkCityBest_logo_horizontal.png" as="image">
     {% if page.url == "/" %}
@@ -42,9 +46,19 @@
     <link rel="preload" href="/images/parkcity_nightlife.jpg" as="image">
     {% endif %}
     
-    <!-- Preload main CSS -->
-    <link rel="preload" href="/css/main.css" as="style">
-    <link rel="stylesheet" href="/css/main.css">
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    
+    <!-- Inline Critical CSS -->
+    <style>
+        {% set criticalCSS %}{% include "critical.css" %}{% endset %}
+        {{ criticalCSS | cssmin | safe }}
+    </style>
+    
+    <!-- Preload and async load non-critical CSS -->
+    <link rel="preload" href="/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
     
     <!-- Prevent flash of wrong theme -->
     <script>
